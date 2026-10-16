@@ -83,7 +83,11 @@
     .button svg, .inline-icon { width: 18px; height: 18px; flex: 0 0 auto; }
     .hero-visual { position: relative; min-width: 0; }
     .visual-frame { aspect-ratio: 4 / 4.6; max-width: 380px; margin-inline: auto; padding: 14px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: 0 22px 70px rgb(23 23 23 / 7%); transform: rotate(-1.5deg); }
-    .visual-placeholder { height: 100%; min-height: 260px; display: grid; place-items: center; text-align: center; padding: 20px; border: 1px dashed #b8c1df; border-radius: 18px; color: var(--blue); background: linear-gradient(145deg, #f7f8ff, #eff1f8); }
+    .visual-placeholder { position: relative; height: 100%; min-height: 260px; display: grid; place-items: center; overflow: hidden; text-align: center; padding: 20px; border: 1px dashed #b8c1df; border-radius: 18px; color: var(--blue); background: linear-gradient(145deg, #f7f8ff, #eff1f8); }
+    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .visual-fallback { position: relative; z-index: 1; }
+    .visual-placeholder.has-photo { padding: 0; border-style: solid; background: #eef0f6; }
+    .visual-placeholder.has-photo .visual-fallback { display: none; }
     .visual-placeholder svg { width: 70px; height: 70px; margin-bottom: 12px; stroke-width: 1.25; }
     .visual-placeholder strong { display: block; color: var(--ink); }
     .visual-placeholder small { display: block; margin-top: 6px; max-width: 230px; color: var(--muted); font-size: .8rem; }
@@ -115,7 +119,11 @@
     .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
     .project-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .22s ease, box-shadow .22s ease; }
     .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgb(23 23 23 / 7%); }
-    .project-image { aspect-ratio: 16 / 9; display: grid; place-items: center; padding: 16px; color: var(--blue); background: #f0f2fa; border-bottom: 1px solid var(--line); }
+    .project-image { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; overflow: hidden; padding: 16px; color: var(--blue); background: #f0f2fa; border-bottom: 1px solid var(--line); }
+    .project-image > img { display: block; width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
+    .project-image.has-photo { padding: 0; }
+    .project-image.has-photo .image-fallback { display: none; }
+    .image-fallback { position: relative; z-index: 1; display: grid; place-items: center; }
     .project-image svg { width: 46px; height: 46px; stroke-width: 1.4; }
     .project-image span { margin-top: 6px; color: var(--muted); font-size: .75rem; text-align: center; }
     .project-content { display: flex; flex: 1; flex-direction: column; padding: 22px; }
@@ -230,11 +238,12 @@
           </div>
           <div class="hero-visual">
             <div class="visual-frame">
-              <div class="visual-placeholder" role="img" aria-label="جایگاه موقت تصویر واقعی از میز کار یا یکی از پروژه‌های هادی">
-                <div>
+              <div class="visual-placeholder" id="hero-image-frame">
+                <img class="hero-photo" src="assets/images/hero-workbench.webp" alt="میز کار و ابزارهای مهندسی برق هادی" loading="eager" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true">
+                <div class="visual-fallback" role="img" aria-label="جایگاه موقت عکس میز کار یا یکی از پروژه‌های واقعی">
                   <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="11" width="46" height="34" rx="4"/><path d="M23 53h18M32 45v8M17 19h30M18 27h9m-9 7h14M42 29l4 4-4 4"/><circle cx="43" cy="22" r="2"/></svg>
-                  <strong>تصویر واقعی پروژه</strong>
-                  <small>Placeholder — جایگزین با عکس میز کار، برد یا نمونه‌کار واقعی</small>
+                  <strong>عکس میز کار</strong>
+                  <small>assets/images/hero-workbench.webp</small>
                 </div>
               </div>
             </div>
@@ -286,19 +295,19 @@
         <div class="section-head"><div><p class="section-kicker">03 / پروژه‌ها</p><h2 id="projects-title">نمونه‌کارها</h2></div><p class="section-intro">شرح پروژه‌ها بر اساس اطلاعات فعلی است؛ نتیجه، تاریخ و لینک دمو فقط پس از تأیید اضافه می‌شوند.</p></div>
         <div class="project-grid">
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="جایگاه تصویر واقعی پروژه EMOchi"><div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="34" height="32" rx="6"/><rect x="13" y="15" width="22" height="16" rx="3"/><circle cx="19" cy="22" r="2"/><circle cx="29" cy="22" r="2"/><path d="M18 27h12M3 17h4m34 0h4M17 4v4m14-4v4"/></svg><span>محل قرارگیری عکس واقعی EMOchi</span></div></div>
+            <div class="project-image"><img src="assets/images/emochi.webp" alt="پروژه EMOchi با Arduino Uno و نمایشگر OLED SSD1306" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت عکس پروژه EMOchi"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="34" height="32" rx="6"/><rect x="13" y="15" width="22" height="16" rx="3"/><circle cx="19" cy="22" r="2"/><circle cx="29" cy="22" r="2"/><path d="M18 27h12M3 17h4m34 0h4M17 4v4m14-4v4"/></svg><span>assets/images/emochi.webp</span></div></div>
             <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 01</span></div><h3>EMOchi</h3><p>پروژه‌ای مبتنی بر Arduino Uno با نمایشگر OLED مدل SSD1306 و کتابخانه RoboEyes. هدف، قابلیت‌ها و نتیجه نهایی هنوز به‌صورت دقیق مستند نشده‌اند.</p><div class="project-detail"><strong>سخت‌افزار / فناوری تأییدشده</strong><span class="ltr">Arduino Uno · OLED SSD1306 · RoboEyes</span></div><div class="tags"><span class="tag">Arduino</span><span class="tag">OLED</span><span class="tag">RoboEyes</span></div></div>
           </article>
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="جایگاه تصویر واقعی اپلیکیشن Uniclass"><div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="4" width="24" height="40" rx="4"/><path d="M19 9h10M20 37h8M17 15h14v17H17zM20 19h8m-8 4h8m-8 4h5"/></svg><span>محل قرارگیری تصویر اپلیکیشن</span></div></div>
+            <div class="project-image"><img src="assets/images/uniclass.webp" alt="اسکرین‌شات اپلیکیشن اندروید Uniclass" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت تصویر اپلیکیشن Uniclass"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="4" width="24" height="40" rx="4"/><path d="M19 9h10M20 37h8M17 15h14v17H17zM20 19h8m-8 4h8m-8 4h5"/></svg><span>assets/images/uniclass.webp</span></div></div>
             <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 02</span></div><h3>Uniclass</h3><p>اپلیکیشن اندروید. طبق اطلاعات فعلی، پروژه با کمک Google AI Studio توسعه داده شده است؛ قابلیت‌های اصلی، وضعیت انتشار و جزئیات فنی نیازمند تکمیل‌اند.</p><div class="project-detail"><strong>اطلاعات تأییدشده</strong>اپلیکیشن اندروید · Google AI Studio</div><div class="tags"><span class="tag">Android</span><span class="tag">Google AI Studio</span></div></div>
           </article>
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="جایگاه تصویر واقعی وب‌سایت Artibaft"><div><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="40" height="34" rx="4"/><path d="M4 15h40M10 11h.01M14 11h.01M18 11h.01M12 23h24M12 29h15M12 35h20"/></svg><span>محل قرارگیری تصویر وب‌سایت</span></div></div>
+            <div class="project-image"><img src="assets/images/artibaft.webp" alt="اسکرین‌شات وب‌سایت فروشگاه قلاب‌بافی Artibaft با رابط فارسی" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت تصویر وب‌سایت Artibaft"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="40" height="34" rx="4"/><path d="M4 15h40M10 11h.01M14 11h.01M18 11h.01M12 23h24M12 29h15M12 35h20"/></svg><span>assets/images/artibaft.webp</span></div></div>
             <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 03</span></div><h3>Artibaft</h3><p>وب‌سایت فروشگاه محصولات قلاب‌بافی با رابط فارسی و چیدمان راست‌چین (RTL). جزئیات قابلیت‌ها، وضعیت فعلی و لینک آنلاین بعداً اضافه می‌شوند.</p><div class="project-detail"><strong>فناوری / ویژگی تأییدشده</strong>رابط فارسی · طراحی راست‌چین</div><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">RTL</span></div></div>
           </article>
         </div>
-        <p class="timeline-note">برای افزودن تصویر، فایل عکس واقعی را در پوشه پروژه قرار بده و بلوک placeholder همان کارت را با تگ <code dir="ltr">&lt;img src="assets/project-name.jpg" alt="توضیح دقیق تصویر"&gt;</code> جایگزین کن. لینک مخزن یا دمو نیز پس از تأیید اضافه شود.</p>
+        <p class="timeline-note">عکس‌ها را در پوشه <code dir="ltr">assets/images/</code> قرار بده و نام فایل‌ها را دقیقاً مطابق مسیرهای روی کارت‌ها نگه دار. تا وقتی عکسی اضافه نشده باشد، جایگاه موقت نمایش داده می‌شود. لینک مخزن یا دمو نیز پس از تأیید اضافه شود.</p>
       </div>
     </section>
 
