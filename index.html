@@ -100,7 +100,26 @@ nav {
   backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border);
 }
-.nav-logo { font-size: 1.05rem; font-weight: 700; color: var(--copper-lt); letter-spacing: 1px; }
+.nav-logo { font-size: 1.05rem; font-weight: 700; color: var(--copper-lt); letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+.emo-eyes { display: flex; gap: 6px; }
+.emo-eye {
+  width: 20px; height: 20px; border-radius: 6px;
+  background: var(--surface2); border: 1px solid var(--border);
+  display: grid; place-items: center; overflow: hidden;
+}
+.emo-pupil { width: 7px; height: 7px; border-radius: 2px; background: var(--copper-lt); transition: transform 0.06s linear; }
+
+.scope-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px 24px; margin-top: 48px;
+}
+.scope-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+.scope-head h3 { font-size: 0.95rem; font-weight: 700; color: var(--white); }
+.scope-head span { font-size: 0.78rem; color: var(--muted); }
+#scope-canvas { width: 100%; height: 160px; display: block; border-radius: 6px; background: var(--bg2); border: 1px solid var(--border); touch-action: none; }
+.scope-readout { display: flex; gap: 20px; margin-top: 12px; flex-wrap: wrap; }
+.scope-readout div { font-size: 0.78rem; color: var(--muted); }
+.scope-readout b { color: var(--copper-lt); font-weight: 700; }
 .nav-links { display: flex; gap: 1.8rem; list-style: none; }
 .nav-links button {
   background: none; border: none; cursor: pointer;
@@ -333,7 +352,13 @@ footer {
 <canvas id="circuit-canvas" aria-hidden="true"></canvas>
 
 <nav id="site-nav">
-  <div class="nav-logo">HP</div>
+  <div class="nav-logo">
+    HP
+    <div class="emo-eyes" aria-hidden="true">
+      <div class="emo-eye"><div class="emo-pupil" id="emo-pupil-l"></div></div>
+      <div class="emo-eye"><div class="emo-pupil" id="emo-pupil-r"></div></div>
+    </div>
+  </div>
   <ul class="nav-links">
     <li><button onclick="scrollToSection('home')">خانه</button></li>
     <li><button onclick="scrollToSection('about')">درباره</button></li>
@@ -363,6 +388,18 @@ footer {
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM7 14v1a5 5 0 0 0 5 5M17 14v1a5 5 0 0 1-5 5"/></svg>Python</div>
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>امنیت سایبری</div>
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Linux</div>
+    </div>
+    <div class="scope-card reveal" id="scope-card">
+      <div class="scope-head">
+        <h3>اسیلوسکوپ</h3>
+        <span>موس رو روی صفحه ببر — فرکانس و شکل موج عوض می‌شه</span>
+      </div>
+      <canvas id="scope-canvas"></canvas>
+      <div class="scope-readout">
+        <div>شکل موج: <b id="scope-wave">Sine</b></div>
+        <div>فرکانس: <b id="scope-freq">1.0 Hz</b></div>
+        <div>دامنه: <b id="scope-amp">50%</b></div>
+      </div>
     </div>
     <div class="hero-scroll">
       <button class="scroll-btn" onclick="scrollToSection('about')">
@@ -643,6 +680,105 @@ document.querySelectorAll('.nav-links button').forEach(b => b.addEventListener('
   siteNav.classList.remove('open');
   navToggle.setAttribute('aria-expanded', 'false');
 }));
+
+/* چشم‌های EMO — دنبال موس/انگشت می‌کنن */
+(function(){
+  const pupilL = document.getElementById('emo-pupil-l');
+  const pupilR = document.getElementById('emo-pupil-r');
+  if (!pupilL || !pupilR) return;
+  const MAX = 3; // حداکثر جابجایی مردمک به پیکسل
+  function look(clientX, clientY) {
+    [pupilL, pupilR].forEach(p => {
+      const eye = p.parentElement;
+      const rect = eye.getBoundingClientRect();
+      const cx = rect.left + rect.width/2;
+      const cy = rect.top + rect.height/2;
+      const dx = clientX - cx, dy = clientY - cy;
+      const dist = Math.hypot(dx, dy) || 1;
+      const nx = (dx/dist) * Math.min(MAX, dist/14);
+      const ny = (dy/dist) * Math.min(MAX, dist/14);
+      p.style.transform = `translate(${nx}px, ${ny}px)`;
+    });
+  }
+  window.addEventListener('mousemove', e => look(e.clientX, e.clientY), { passive: true });
+  window.addEventListener('touchmove', e => {
+    if (e.touches[0]) look(e.touches[0].clientX, e.touches[0].clientY);
+  }, { passive: true });
+})();
+
+/* اسیلوسکوپ زنده — فرکانس و شکل موج با موقعیت/فاصله موس از مرکز عوض می‌شه */
+(function(){
+  const canvas = document.getElementById('scope-canvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const freqEl = document.getElementById('scope-freq');
+  const ampEl = document.getElementById('scope-amp');
+  const waveEl = document.getElementById('scope-wave');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let W, H;
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    const dpr = window.devicePixelRatio || 1;
+    W = canvas.width = rect.width * dpr;
+    H = canvas.height = rect.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  window.addEventListener('resize', resize);
+
+  let freq = 1.0;      // هرتز
+  let amp = 0.5;        // 0 تا 1
+  let isSquare = false;
+  let t = 0;
+
+  canvas.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    const xRatio = (e.clientX - rect.left) / rect.width;   // 0..1
+    const yRatio = (e.clientY - rect.top) / rect.height;   // 0..1
+    freq = 0.4 + xRatio * 4.5;          // 0.4Hz تا ~5Hz
+    amp = 0.25 + (1 - yRatio) * 0.6;    // بالاتر از ماوس = دامنه بیشتر
+    isSquare = xRatio > 0.75;           // سمت چپ صفحه (RTL) = موج مربعی
+  });
+  canvas.addEventListener('mouseleave', () => { freq = 1.0; amp = 0.5; isSquare = false; });
+
+  function draw() {
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width, h = rect.height;
+    ctx.clearRect(0, 0, w, h);
+
+    ctx.strokeStyle = 'rgba(103,114,127,0.18)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, h/2); ctx.lineTo(w, h/2);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#c17f4f';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    const cycles = freq * 2;
+    for (let x = 0; x <= w; x++) {
+      const phase = (x / w) * cycles * Math.PI * 2 + t;
+      let y;
+      if (isSquare) {
+        y = Math.sign(Math.sin(phase)) * amp;
+      } else {
+        y = Math.sin(phase) * amp;
+      }
+      const py = h/2 - y * (h/2 - 10);
+      if (x === 0) ctx.moveTo(x, py); else ctx.lineTo(x, py);
+    }
+    ctx.stroke();
+
+    freqEl.textContent = freq.toFixed(1) + ' Hz';
+    ampEl.textContent = Math.round(amp * 100) + '%';
+    waveEl.textContent = isSquare ? 'Square' : 'Sine';
+
+    if (!reduceMotion) t += 0.05;
+    requestAnimationFrame(draw);
+  }
+  resize();
+  draw();
+})();
 
 /* ماشین تایپ متن هدر */
 (function(){
