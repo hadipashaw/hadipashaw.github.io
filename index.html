@@ -1,343 +1,721 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f8f5">
-  <meta name="description" content="پورتفولیوی هادی پاشایی؛ دانشجوی مهندسی برق با علاقه به اتوماسیون صنعتی، الکترونیک، میکروکنترلرها و توسعه نرم‌افزار.">
-  <meta name="author" content="Hadi Pashaei">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="هادی پاشایی | مهندسی برق و اتوماسیون صنعتی">
-  <meta property="og:description" content="پروژه‌ها و مسیر یادگیری در الکترونیک، اتوماسیون صنعتی و توسعه نرم‌افزار.">
-  <meta property="og:url" content="https://hadipashaw.github.io/">
-  <meta property="og:locale" content="fa_IR">
-  <link rel="canonical" href="https://hadipashaw.github.io/">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <title>هادی پاشایی | مهندسی برق و اتوماسیون صنعتی</title>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Hadi Pashaei",
-    "alternateName":"هادی پاشایی",
-    "url":"https://hadipashaw.github.io/",
-    "jobTitle":"Electrical Engineering Student",
-    "description":"دانشجوی مهندسی برق با علاقه به اتوماسیون صنعتی، الکترونیک و توسعه نرم‌افزار.",
-    "sameAs":["https://github.com/hadipashaw","https://t.me/Hadipashaw","https://www.instagram.com/hadipashaw"]
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="OFwazxc5RojN6JMEE-yeHDcwxuf5TZ4-w1x7Wxeph8I" />
+<title>هادی پاشایی | Hadi Pashaei — Electrical Engineer & Builder</title>
+
+<meta name="description" content="هادی پاشایی (Hadi Pashaei) — دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.">
+<meta name="keywords" content="هادی پاشایی, Hadi Pashaei, hadipashaw, مهندس برق, PLC, Arduino, Robotics, رباتیک, امنیت سایبری, Python, Embedded Systems">
+<meta name="author" content="Hadi Pashaei - هادی پاشایی">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0d11">
+<link rel="canonical" href="https://hadipashaw.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="هادی پاشایی | Hadi Pashaei — Electrical Engineer & Builder">
+<meta property="og:description" content="دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.">
+<meta property="og:url" content="https://hadipashaw.github.io/">
+<meta property="og:locale" content="fa_IR">
+<meta property="og:site_name" content="Hadi Pashaei">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="هادی پاشایی | Hadi Pashaei">
+<meta name="twitter:description" content="دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hadi Pashaei",
+  "alternateName": "هادی پاشایی",
+  "url": "https://hadipashaw.github.io/",
+  "image": "https://avatars.githubusercontent.com/u/258557607?v=4",
+  "jobTitle": "Electrical Engineering Student",
+  "description": "دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.",
+  "sameAs": [
+    "https://github.com/hadipashaw",
+    "https://t.me/Hadipashaw",
+    "https://www.instagram.com/hadipashaw"
+  ]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:        #0a0d11;
+  --bg2:       #0e1319;
+  --surface:   #131a22;
+  --surface2:  #171f29;
+  --border:    #212b37;
+  --copper:    #c17f4f;
+  --copper-lt: #e0a874;
+  --steel:     #4a7c96;
+  --text:      #c7d0d9;
+  --muted:     #67727f;
+  --white:     #eef2f5;
+  --radius:    10px;
+  --font:      'Vazirmatn', sans-serif;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+::selection { background: var(--copper); color: #0a0d11; }
+a { color: inherit; }
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--copper-lt);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+#circuit-canvas {
+  position: fixed; inset: 0;
+  z-index: 0; pointer-events: none; opacity: 0.14;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100; padding: 0 5%; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(10,13,17,0.82);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo { font-size: 1.05rem; font-weight: 700; color: var(--copper-lt); letter-spacing: 1px; }
+.nav-links { display: flex; gap: 1.8rem; list-style: none; }
+.nav-links button {
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-family: var(--font);
+  font-size: 0.9rem; transition: color 0.25s;
+  position: relative; padding: 4px 0;
+}
+.nav-links button::after {
+  content: ''; position: absolute; bottom: -4px; right: 0;
+  width: 0; height: 2px; background: var(--copper); transition: width 0.25s;
+}
+.nav-links button:hover { color: var(--white); }
+.nav-links button:hover::after { width: 100%; }
+.nav-links button.active { color: var(--copper-lt); }
+.nav-links button.active::after { width: 100%; }
+.nav-toggle { display: none; background: none; border: 1px solid var(--border); border-radius: 8px; color: var(--text); width: 38px; height: 38px; cursor: pointer; }
+
+.container { width: 90%; max-width: 1100px; margin: auto; position: relative; z-index: 2; }
+section { padding: 100px 0; }
+
+.section-label {
+  display: inline-block; font-size: 0.78rem; font-weight: 600;
+  color: var(--copper-lt); margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 800;
+  color: var(--white); margin-bottom: 12px; line-height: 1.3;
+}
+.section-line {
+  width: 44px; height: 3px;
+  background: var(--copper);
+  border-radius: 4px; margin-bottom: 44px;
+}
+
+/* HERO */
+.hero {
+  min-height: 92vh; display: grid; place-items: center;
+  text-align: center; position: relative; z-index: 2; padding-top: 80px;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; color: var(--copper-lt);
+  border: 1px solid rgba(193,127,79,0.35); padding: 6px 16px;
+  border-radius: 999px; margin-bottom: 28px;
+}
+.hero-name {
+  font-size: clamp(2.6rem, 10vw, 5.5rem); font-weight: 800;
+  line-height: 1.1; color: var(--white);
+}
+.hero-typewriter {
+  font-size: clamp(1rem, 2.3vw, 1.3rem); color: var(--muted);
+  margin-top: 22px; min-height: 1.8rem;
+}
+.hero-typewriter .cursor {
+  color: var(--copper-lt); border-left: 2px solid var(--copper-lt);
+  padding-left: 4px; animation: blink 0.9s step-end infinite;
+}
+@keyframes blink { 50% { border-color: transparent; } }
+
+.hero-chips {
+  display: flex; gap: 10px; justify-content: center;
+  flex-wrap: wrap; margin-top: 32px;
+}
+.chip {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; padding: 7px 16px; border-radius: 999px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
+.chip svg { width: 15px; height: 15px; color: var(--copper-lt); flex-shrink: 0; }
+
+.hero-scroll { margin-top: 56px; }
+.scroll-btn { background: none; border: none; color: var(--muted); cursor: pointer; font-family: var(--font); font-size: 0.85rem; display: inline-flex; flex-direction: column; align-items: center; gap: 8px; }
+.scroll-line { width: 1px; height: 32px; background: linear-gradient(var(--copper), transparent); }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+.identity-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 28px; text-align: center;
+}
+.id-avatar {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--surface2); border: 1px solid var(--border);
+  display: grid; place-items: center; margin: 0 auto 16px;
+  color: var(--copper-lt);
+}
+.id-avatar svg { width: 34px; height: 34px; }
+.id-name { font-size: 1.1rem; font-weight: 700; color: var(--white); }
+.id-role { font-size: 0.85rem; color: var(--muted); margin-top: 4px; margin-bottom: 20px; }
+.id-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid var(--border); padding-top: 20px; }
+.id-stat .val { font-size: 1.3rem; font-weight: 700; color: var(--copper-lt); }
+.id-stat .lbl { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.about-text p { color: var(--text); margin-bottom: 18px; font-size: 1rem; max-width: 62ch; }
+.about-text .highlight { color: var(--copper-lt); font-weight: 600; }
+
+@media (max-width: 760px) {
+  .about-grid { grid-template-columns: 1fr; }
+}
+
+/* SKILLS */
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+.skill-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 24px;
+}
+.skill-icon {
+  width: 38px; height: 38px; border-radius: 9px;
+  background: var(--surface2); display: grid; place-items: center;
+  margin-bottom: 14px; color: var(--copper-lt);
+}
+.skill-icon svg { width: 20px; height: 20px; }
+.skill-card h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.skill-card p { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+.skill-level {
+  display: inline-block; font-size: 0.72rem; font-weight: 600;
+  color: var(--steel); background: rgba(74,124,150,0.12);
+  border: 1px solid rgba(74,124,150,0.3);
+  padding: 4px 10px; border-radius: 6px;
+}
+
+.lang-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+.lang-pill {
+  display: flex; align-items: center; gap: 12px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 16px;
+}
+.lang-icon {
+  width: 32px; height: 32px; border-radius: 7px;
+  background: var(--surface2); display: grid; place-items: center;
+  color: var(--copper-lt); flex-shrink: 0;
+}
+.lang-icon svg { width: 17px; height: 17px; }
+.lang-name { font-size: 0.88rem; font-weight: 600; color: var(--white); }
+.lang-type { font-size: 0.72rem; color: var(--muted); }
+
+/* PROJECTS */
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.project-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.project-card:hover { border-color: rgba(193,127,79,0.4); transform: translateY(-4px); }
+.project-media {
+  aspect-ratio: 16/9; background: var(--surface2);
+  display: grid; place-items: center; color: var(--muted);
+  font-size: 0.78rem; text-align: center; padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.project-media svg { width: 28px; height: 28px; margin-bottom: 8px; color: var(--border); }
+.project-header { display: flex; align-items: center; justify-content: space-between; padding: 16px 20px 0; }
+.project-icon { width: 30px; height: 30px; border-radius: 7px; background: var(--surface2); display: grid; place-items: center; color: var(--copper-lt); }
+.project-icon svg { width: 16px; height: 16px; }
+.project-badge { font-size: 0.68rem; font-weight: 600; color: var(--steel); background: rgba(74,124,150,0.12); border: 1px solid rgba(74,124,150,0.3); padding: 3px 9px; border-radius: 6px; }
+.project-badge.copper { color: var(--copper-lt); background: rgba(193,127,79,0.12); border-color: rgba(193,127,79,0.3); }
+.project-body { padding: 16px 20px 22px; }
+.project-body h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.project-body p { font-size: 0.85rem; color: var(--muted); line-height: 1.8; margin-bottom: 14px; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.ptag { font-size: 0.7rem; color: var(--text); background: var(--surface2); border: 1px solid var(--border); padding: 3px 9px; border-radius: 6px; }
+
+/* TIMELINE */
+.timeline { position: relative; padding-right: 28px; border-right: 2px solid var(--border); }
+.tl-item { position: relative; padding-bottom: 36px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+  content: ''; position: absolute; right: -35px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--copper); border: 2px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--border);
+}
+.tl-stage { font-size: 0.78rem; font-weight: 700; color: var(--copper-lt); margin-bottom: 4px; }
+.tl-item h3 { font-size: 1.05rem; font-weight: 700; color: var(--white); margin-bottom: 6px; }
+.tl-item p { font-size: 0.9rem; color: var(--muted); max-width: 60ch; }
+
+/* CONTACT */
+.contact-strip {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 56px 32px; text-align: center;
+}
+.contact-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--surface2); display: grid; place-items: center; margin: 0 auto 20px; color: var(--copper-lt); }
+.contact-icon svg { width: 24px; height: 24px; }
+.contact-strip h2 { font-size: 1.5rem; font-weight: 700; color: var(--white); margin-bottom: 10px; }
+.contact-strip p { color: var(--muted); margin-bottom: 28px; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--copper); color: #0a0d11; font-weight: 700;
+  padding: 13px 28px; border-radius: 999px; text-decoration: none;
+  font-size: 0.92rem; transition: background 0.25s;
+}
+.cta-btn:hover { background: var(--copper-lt); }
+.cta-btn svg { width: 17px; height: 17px; }
+
+/* FOOTER */
+footer {
+  padding: 32px 5%; display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border); flex-wrap: wrap; gap: 16px;
+}
+.footer-copy { font-size: 0.82rem; color: var(--muted); }
+.footer-copy span { color: var(--text); font-weight: 600; }
+.footer-links { display: flex; gap: 18px; }
+.footer-links a { display: inline-flex; align-items: center; gap: 7px; color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.25s; }
+.footer-links a:hover { color: var(--copper-lt); }
+.footer-links svg { width: 17px; height: 17px; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* MOBILE */
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: grid; place-items: center; }
+  nav.open .nav-links {
+    display: flex; flex-direction: column; position: absolute; top: 64px; right: 0; left: 0;
+    background: var(--bg2); border-bottom: 1px solid var(--border); padding: 18px 5%; gap: 14px; align-items: flex-start;
   }
-  </script>
-  <style>
-    :root {
-      color-scheme: light;
-      --paper: #f8f8f5;
-      --surface: #ffffff;
-      --ink: #171717;
-      --muted: #62645f;
-      --line: #deded7;
-      --blue: #3159c9;
-      --blue-dark: #2446a6;
-      --soft-blue: #edf1ff;
-      --radius: 20px;
-      --content: 1120px;
-      --font: "Vazirmatn", Tahoma, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
-    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.85; -webkit-font-smoothing: antialiased; }
-    body, button, a { -webkit-tap-highlight-color: transparent; }
-    img, svg { max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button, a { touch-action: manipulation; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 6px; }
-    ::selection { color: #fff; background: var(--blue); }
-    .skip-link { position: absolute; top: 8px; right: 8px; z-index: 1000; padding: 10px 14px; background: var(--ink); color: #fff; transform: translateY(-160%); border-radius: 8px; }
-    .skip-link:focus { transform: translateY(0); }
-    .wrap { width: min(calc(100% - 40px), var(--content)); margin-inline: auto; }
-    .site-header { position: sticky; top: 0; z-index: 50; background: rgb(248 248 245 / 94%); backdrop-filter: blur(12px); border-bottom: 1px solid rgb(222 222 215 / 85%); }
-    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; white-space: nowrap; }
-    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; color: white; background: var(--blue); border-radius: 11px; }
-    .brand-mark svg { width: 21px; height: 21px; }
-    .nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: clamp(12px, 2.2vw, 28px); list-style: none; padding: 0; margin: 0; }
-    .nav-links a { color: var(--muted); font-size: .9rem; font-weight: 600; }
-    .nav-links a:hover { color: var(--blue); }
-    .nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: 1px solid var(--line); border-radius: 999px; font-weight: 700; font-size: .88rem; }
-    .nav-cta:hover { border-color: var(--blue); color: var(--blue); }
-    .hero { padding: clamp(70px, 10vw, 126px) 0 88px; overflow: clip; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(240px, .7fr); align-items: center; gap: clamp(28px, 6vw, 80px); }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; margin: 0 0 20px; color: var(--blue); font-size: .82rem; font-weight: 800; letter-spacing: .02em; }
-    .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 760px; margin-bottom: 22px; font-size: clamp(2.3rem, 6vw, 5.1rem); line-height: 1.25; letter-spacing: -.045em; font-weight: 800; }
-    h1 span { color: var(--blue); }
-    .hero-lead { max-width: 660px; margin-bottom: 28px; color: var(--muted); font-size: clamp(1rem, 1.8vw, 1.18rem); }
-    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-    .button { min-height: 46px; display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 10px 18px; border: 1px solid transparent; border-radius: 12px; font: inherit; font-weight: 700; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
-    .button:hover { transform: translateY(-2px); }
-    .button-primary { color: #fff; background: var(--blue); }
-    .button-primary:hover { background: var(--blue-dark); }
-    .button-secondary { background: transparent; border-color: var(--line); }
-    .button-secondary:hover { border-color: var(--blue); color: var(--blue); }
-    .button svg, .inline-icon { width: 18px; height: 18px; flex: 0 0 auto; }
-    .hero-visual { position: relative; min-width: 0; }
-    .visual-frame { aspect-ratio: 4 / 4.6; max-width: 380px; margin-inline: auto; padding: 14px; border: 1px solid var(--line); border-radius: 28px; background: var(--surface); box-shadow: 0 22px 70px rgb(23 23 23 / 7%); transform: rotate(-1.5deg); }
-    .visual-placeholder { position: relative; height: 100%; min-height: 260px; display: grid; place-items: center; overflow: hidden; text-align: center; padding: 20px; border: 1px dashed #b8c1df; border-radius: 18px; color: var(--blue); background: linear-gradient(145deg, #f7f8ff, #eff1f8); }
-    .hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .visual-fallback { position: relative; z-index: 1; }
-    .visual-placeholder.has-photo { padding: 0; border-style: solid; background: #eef0f6; }
-    .visual-placeholder.has-photo .visual-fallback { display: none; }
-    .visual-placeholder svg { width: 70px; height: 70px; margin-bottom: 12px; stroke-width: 1.25; }
-    .visual-placeholder strong { display: block; color: var(--ink); }
-    .visual-placeholder small { display: block; margin-top: 6px; max-width: 230px; color: var(--muted); font-size: .8rem; }
-    .visual-note { margin: 16px 0 0; color: var(--muted); text-align: center; font-size: .75rem; }
-    .quick-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 62px; }
-    .fact { padding: 17px 18px; background: rgb(255 255 255 / 70%); border: 1px solid var(--line); border-radius: 14px; }
-    .fact strong { display: block; margin-bottom: 3px; font-size: .98rem; }
-    .fact span { color: var(--muted); font-size: .83rem; }
-    section.content-section { padding: 82px 0; border-top: 1px solid var(--line); }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 34px; }
-    .section-kicker { margin-bottom: 8px; color: var(--blue); font-size: .8rem; font-weight: 800; }
-    h2 { margin-bottom: 0; font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.35; letter-spacing: -.035em; }
-    .section-intro { max-width: 480px; margin: 0; color: var(--muted); font-size: .95rem; }
-    .about-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(26px, 6vw, 76px); }
-    .about-copy p { color: var(--muted); }
-    .about-copy p:last-child { margin-bottom: 0; }
-    .principles { display: grid; gap: 12px; }
-    .principle { display: flex; align-items: flex-start; gap: 14px; padding: 17px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
-    .icon-box { width: 42px; height: 42px; display: grid; place-items: center; flex: 0 0 auto; border-radius: 12px; color: var(--blue); background: var(--soft-blue); }
-    .icon-box svg { width: 22px; height: 22px; }
-    .principle h3 { margin: 0 0 4px; font-size: 1rem; }
-    .principle p { margin: 0; color: var(--muted); font-size: .87rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-    .skill { min-width: 0; padding: 22px; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
-    .skill-top { display: flex; align-items: center; gap: 12px; margin-bottom: 13px; }
-    .skill h3 { margin: 0; font-size: 1rem; overflow-wrap: anywhere; }
-    .skill p { margin: 0; color: var(--muted); font-size: .87rem; }
-    .skill-note { display: inline-block; margin-top: 16px; padding: 4px 9px; color: var(--blue-dark); background: var(--soft-blue); border-radius: 999px; font-size: .75rem; font-weight: 700; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
-    .project-card { display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .22s ease, box-shadow .22s ease; }
-    .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgb(23 23 23 / 7%); }
-    .project-image { position: relative; aspect-ratio: 16 / 9; display: grid; place-items: center; overflow: hidden; padding: 16px; color: var(--blue); background: #f0f2fa; border-bottom: 1px solid var(--line); }
-    .project-image > img { display: block; width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; }
-    .project-image.has-photo { padding: 0; }
-    .project-image.has-photo .image-fallback { display: none; }
-    .image-fallback { position: relative; z-index: 1; display: grid; place-items: center; }
-    .project-image svg { width: 46px; height: 46px; stroke-width: 1.4; }
-    .project-image span { margin-top: 6px; color: var(--muted); font-size: .75rem; text-align: center; }
-    .project-content { display: flex; flex: 1; flex-direction: column; padding: 22px; }
-    .project-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
-    .status { padding: 3px 8px; border-radius: 999px; color: #42443f; background: #f0f0eb; font-size: .72rem; font-weight: 700; }
-    .project-index { color: var(--muted); font-size: .75rem; font-weight: 700; }
-    .project-content h3 { margin-bottom: 8px; font-size: 1.2rem; }
-    .project-content p { color: var(--muted); font-size: .88rem; }
-    .project-detail { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); }
-    .project-detail strong { display: block; margin-bottom: 5px; font-size: .78rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
-    .tag { padding: 3px 8px; border: 1px solid var(--line); border-radius: 7px; color: #454740; font-size: .72rem; direction: ltr; }
-    .timeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-    .timeline-item { position: relative; padding: 20px 17px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
-    .timeline-item::before { content: ""; display: block; width: 25px; height: 4px; margin-bottom: 18px; border-radius: 10px; background: var(--blue); }
-    .timeline-item strong { display: block; margin-bottom: 7px; font-size: .95rem; }
-    .timeline-item span { display: block; color: var(--blue); font-size: .8rem; font-weight: 800; }
-    .timeline-item p { margin: 8px 0 0; color: var(--muted); font-size: .8rem; }
-    .timeline-note { margin: 16px 0 0; color: var(--muted); font-size: .8rem; }
-    .contact-panel { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: clamp(24px, 5vw, 46px); color: #fff; background: var(--ink); border-radius: 24px; }
-    .contact-panel h2 { margin-bottom: 10px; }
-    .contact-panel p { max-width: 550px; margin-bottom: 0; color: #d0d0ca; }
-    .contact-panel .button { color: var(--ink); background: #fff; flex-shrink: 0; }
-    .contact-panel .button:hover { background: #e9edff; }
-    footer { padding: 28px 0; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: .82rem; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 18px; }
-    .footer-links a:hover { color: var(--blue); }
-    .ltr { direction: ltr; unicode-bidi: isolate; }
-    @media (max-width: 900px) {
-      .hero-grid { grid-template-columns: minmax(0, 1.2fr) minmax(210px, .8fr); gap: 28px; }
-      .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .timeline { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: .82rem; }
-    }
-    @media (max-width: 640px) {
-      .wrap { width: min(calc(100% - 32px), var(--content)); }
-      .nav { min-height: 64px; gap: 10px; }
-      .nav-links { gap: 10px; }
-      .nav-links li:nth-child(2), .nav-links li:nth-child(4) { display: none; }
-      .nav-cta { padding: 8px 10px; font-size: .78rem; }
-      .brand { gap: 7px; font-size: .9rem; }
-      .brand-mark { width: 32px; height: 32px; }
-      .hero { padding: 64px 0 56px; }
-      .hero-grid { grid-template-columns: minmax(0, 1fr); }
-      .hero-visual { order: -1; max-width: 290px; width: 100%; margin-inline: auto; }
-      .visual-frame { aspect-ratio: 1.2 / 1; padding: 9px; border-radius: 20px; }
-      .visual-placeholder { min-height: 190px; }
-      .visual-placeholder svg { width: 48px; height: 48px; }
-      .quick-facts { grid-template-columns: minmax(0, 1fr); margin-top: 35px; gap: 8px; }
-      .fact { padding: 13px 15px; }
-      section.content-section { padding: 60px 0; }
-      .section-head { align-items: flex-start; flex-direction: column; gap: 12px; margin-bottom: 24px; }
-      .about-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
-      .skills-grid, .project-grid { grid-template-columns: minmax(0, 1fr); }
-      .skill { padding: 19px; }
-      .project-content { padding: 19px; }
-      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .contact-panel { align-items: flex-start; flex-direction: column; }
-      .contact-panel .button { width: 100%; }
-    }
-    @media (max-width: 360px) {
-      .wrap { width: calc(100% - 24px); }
-      .nav { gap: 6px; }
-      .brand { font-size: .8rem; }
-      .brand-mark { width: 29px; height: 29px; }
-      .nav-links { gap: 8px; }
-      .nav-links a { font-size: .76rem; }
-      .nav-cta { padding: 7px 8px; font-size: .72rem; }
-      h1 { font-size: clamp(2rem, 10vw, 2.5rem); }
-      .actions { align-items: stretch; flex-direction: column; }
-      .actions .button { width: 100%; }
-      .timeline { grid-template-columns: minmax(0, 1fr); }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
-  </style>
+}
+@media (max-width: 400px) {
+  section { padding: 72px 0; }
+  .hero { min-height: 86vh; }
+  .timeline { padding-right: 22px; }
+  .tl-item::before { right: -29px; }
+  .contact-strip { padding: 40px 18px; }
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">رفتن به محتوای اصلی</a>
-  <header class="site-header">
-    <nav class="nav wrap" aria-label="ناوبری اصلی">
-      <a class="brand" href="#home" aria-label="هادی پاشایی، صفحه اصلی">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 10-13h-7l1-7Z"/></svg></span>
-        <span>هادی پاشایی</span>
+
+<canvas id="circuit-canvas" aria-hidden="true"></canvas>
+
+<nav id="site-nav">
+  <div class="nav-logo">HP</div>
+  <ul class="nav-links">
+    <li><button onclick="scrollToSection('home')">خانه</button></li>
+    <li><button onclick="scrollToSection('about')">درباره</button></li>
+    <li><button onclick="scrollToSection('skills')">مهارت‌ها</button></li>
+    <li><button onclick="scrollToSection('projects')">پروژه‌ها</button></li>
+    <li><button onclick="scrollToSection('journey')">مسیر</button></li>
+  </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="باز کردن منو" aria-expanded="false">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div>
+    <div class="hero-tag">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+      مهندس برق · سازنده · کاوشگر
+    </div>
+    <h1 class="hero-name">هادی پاشایی</h1>
+    <div class="hero-typewriter">
+      <span id="typewriter-text"></span><span class="cursor">|</span>
+    </div>
+    <div class="hero-chips">
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01M9 17h6"/></svg>رباتیک</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>PLC صنعتی</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM7 14v1a5 5 0 0 0 5 5M17 14v1a5 5 0 0 1-5 5"/></svg>Python</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>امنیت سایبری</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Linux</div>
+    </div>
+    <div class="hero-scroll">
+      <button class="scroll-btn" onclick="scrollToSection('about')">
+        <span>کاوش کن</span>
+        <div class="scroll-line"></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">درباره من</div>
+      <h2 class="section-title">مهندسی که از کد و سیم دنیا می‌سازد</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="identity-card">
+          <div class="id-avatar">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
+          </div>
+          <div class="id-name">هادی پاشایی</div>
+          <div class="id-role">Electrical Engineer & Builder</div>
+          <div class="id-stats">
+            <div class="id-stat"><div class="val">برق</div><div class="lbl">رشته تحصیلی</div></div>
+            <div class="id-stat"><div class="val">10+</div><div class="lbl">پروژه انجام‌شده</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <p>از بچگی جذب سخت‌افزار و رباتیک بودم — همون کنجکاوی ساده‌ی «این چطور کار می‌کنه» که کم‌کم تبدیل شد به عادت باز کردن و ساختن چیزها. همین کشش منو کشوند سمت <span class="highlight">مهندسی برق</span>.</p>
+        <p>الان هم دانشجوی مهندسی برق هستم و هم دنبال کار صنعتی می‌گردم — جایی که بشه تجربه‌ی عملی با <span class="highlight">PLC</span>، آردوینو و سیستم‌های تعبیه‌شده رو به کار گرفت. در کنارش با <span class="highlight">پایتون</span> ابزار می‌سازم و در حوزه <span class="highlight">امنیت سایبری</span> و <span class="highlight">لینوکس</span> هم دستم رو در کار دارم.</p>
+        <p>پروژه‌های این صفحه قراره با جزئیات فنی واقعی (مشکل، راه‌حل، چالش‌ها) تکمیل بشن؛ فعلاً ساختار و چارچوبشونه.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">مهارت‌ها</div>
+      <h2 class="section-title">آنچه بلدم</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
+        <h3>PLC & Industrial Automation</h3>
+        <p>برنامه‌نویسی PLC با Ladder، STL و FBD. کار با سیستم‌های کنترل صنعتی.</p>
+        <span class="skill-level">تجربه عملی</span>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+        <h3>Arduino & Embedded Systems</h3>
+        <p>طراحی پروژه‌های سخت‌افزاری، کنترل سنسورها و سیستم‌های میکروکنترلری.</p>
+        <span class="skill-level">تجربه عملی</span>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM7 14v1a5 5 0 0 0 5 5M17 14v1a5 5 0 0 1-5 5"/></svg></div>
+        <h3>Python</h3>
+        <p>اسکریپت‌نویسی، اتوماسیون و ارتباط نرم‌افزار با سخت‌افزار.</p>
+        <span class="skill-level">تجربه عملی</span>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01M9 17h6"/></svg></div>
+        <h3>Robotics & AI</h3>
+        <p>طراحی ربات، سیستم احساسات و انیمیشن OLED، ترکیب AI با سخت‌افزار.</p>
+        <span class="skill-level">در حال یادگیری</span>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
+        <h3>Cybersecurity & Linux</h3>
+        <p>فعالیت در حوزه امنیت سایبری، کار با توزیع‌های لینوکس.</p>
+        <span class="skill-level">در حال یادگیری</span>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+        <h3>Web (HTML & CSS)</h3>
+        <p>ساخت رابط‌های وب و صفحات پورتفولیو.</p>
+        <span class="skill-level">تجربه عملی</span>
+      </div>
+    </div>
+    <div style="margin-top: 44px;" class="reveal">
+      <div class="section-label" style="margin-bottom: 18px;">زبان‌ها و ابزارها</div>
+      <div class="lang-grid">
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/></svg></span><div><div class="lang-name">Python</div><div class="lang-type">General Purpose</div></div></div>
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></span><div><div class="lang-name">Arduino (C++)</div><div class="lang-type">Embedded</div></div></div>
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/></svg></span><div><div class="lang-name">Ladder Logic</div><div class="lang-type">PLC / Industrial</div></div></div>
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18V6l8 6 8-6v12"/></svg></span><div><div class="lang-name">FBD</div><div class="lang-type">PLC / Industrial</div></div></div>
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></span><div><div class="lang-name">STL</div><div class="lang-type">PLC / Industrial</div></div></div>
+        <div class="lang-pill"><span class="lang-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span><div><div class="lang-name">HTML & CSS</div><div class="lang-type">Web</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">پروژه‌ها</div>
+      <h2 class="section-title">چیزهایی که ساخته‌ام</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><circle cx="9" cy="9" r="1.5"/><path d="M4 16l4-4 4 4 5-5 3 3"/></svg>
+          جای عکس ربات EMO — بعداً جایگزین کن
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01"/></svg></div><div class="project-badge copper">robotics</div></div>
+        <div class="project-body">
+          <h3>ربات EMO — پروژه شخصی</h3>
+          <p>ربات با صفحه OLED برای نمایش حالت‌های چهره. جزئیات فنی (مشکل، راه‌حل، چالش‌ها) به‌زودی تکمیل می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Arduino</span><span class="ptag">OLED</span><span class="ptag">C++</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>
+          جای عکس/مستند پروژه صنعتی
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><div class="project-badge">industrial</div></div>
+        <div class="project-body">
+          <h3>پروژه‌های PLC صنعتی</h3>
+          <p>کار با سیستم‌های کنترل صنعتی. جزئیات فنی هر پروژه به‌زودی اضافه می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Ladder</span><span class="ptag">FBD</span><span class="ptag">STL</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+          جای عکس/اسکرین‌شات
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div><div class="project-badge">security</div></div>
+        <div class="project-body">
+          <h3>پروژه‌های امنیت سایبری</h3>
+          <p>فعالیت در حوزه امنیت سایبری با لینوکس. جزئیات به‌زودی اضافه می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Linux</span><span class="ptag">Networking</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 16l4-4 4 4 5-5 3 3"/></svg>
+          جای عکس/گیف انیمیشن OLED
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 16l4-4 4 4 5-5 3 3"/></svg></div><div class="project-badge copper">animation</div></div>
+        <div class="project-body">
+          <h3>OLED Emotion System</h3>
+          <p>سیستم انیمیشن برای نمایش حالت‌ها روی صفحه OLED. جزئیات به‌زودی اضافه می‌شود.</p>
+          <div class="project-tags"><span class="ptag">OLED 128×64</span><span class="ptag">Bitmap</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/></svg>
+          جای عکس/اسکرین‌شات
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5z"/></svg></div><div class="project-badge">software</div></div>
+        <div class="project-body">
+          <h3>ابزارهای Python</h3>
+          <p>اسکریپت‌ها و ابزارهای نرم‌افزاری برای اتوماسیون و ارتباط با سخت‌افزار. جزئیات به‌زودی اضافه می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Serial Comm</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-media">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/></svg>
+          جای عکس/اسکرین‌شات
+        </div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/></svg></div><div class="project-badge">embedded</div></div>
+        <div class="project-body">
+          <h3>Embedded Control Systems</h3>
+          <p>سیستم‌های کنترل با میکروکنترلر و سنسورهای متنوع. جزئیات به‌زودی اضافه می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Microcontroller</span><span class="ptag">Sensors</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="journey">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">مسیر</div>
+      <h2 class="section-title">از کجا شروع کردم</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-stage">مرحله ۱</div>
+        <h3>اولین جرقه — الکترونیک</h3>
+        <p>آشنایی با مدارها، لحیم‌کاری و اولین پروژه‌های ساده.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-stage">مرحله ۲</div>
+        <h3>ورود به آردوینو و برنامه‌نویسی</h3>
+        <p>اولین برد آردوینو، یادگیری ++C، HTML و CSS.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-stage">مرحله ۳</div>
+        <h3>دنیای صنعت — PLC</h3>
+        <p>ورود به اتوماسیون صنعتی، یادگیری Ladder، FBD و STL.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-stage">مرحله ۴</div>
+        <h3>امنیت سایبری و لینوکس</h3>
+        <p>کار با لینوکس و ابزارهای امنیت شبکه.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-stage">الان</div>
+        <h3>مهندسی برق + دنبال کار صنعتی</h3>
+        <p>تحصیل در مهندسی برق، ترکیب تجربه‌های صنعت و نرم‌افزار، و جستجوی فرصت کار صنعتی.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section>
+  <div class="container">
+    <div class="contact-strip reveal">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </div>
+      <h2>پیامم بده</h2>
+      <p>سوال، پروژه، یا هر چیزی که داری — تلگرام سریع‌ترین راهه.</p>
+      <a href="https://t.me/Hadipashaw" target="_blank" rel="noopener" class="cta-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+        پیام در تلگرام
       </a>
-      <ul class="nav-links">
-        <li><a href="#about">درباره من</a></li>
-        <li><a href="#skills">مهارت‌ها</a></li>
-        <li><a href="#projects">پروژه‌ها</a></li>
-        <li><a href="#journey">مسیر</a></li>
-      </ul>
-      <a class="nav-cta" href="https://t.me/Hadipashaw" target="_blank" rel="noopener noreferrer" aria-label="ارتباط با هادی در تلگرام، باز شدن در زبانه جدید">ارتباط <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
+    </div>
+  </div>
+</section>
 
-  <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="wrap">
-        <div class="hero-grid">
-          <div>
-            <p class="eyebrow">مهندسی برق · اتوماسیون صنعتی · ساخت</p>
-            <h1 id="hero-title">از علاقه به تکنولوژی،<br><span>تا ساختن و حل مسئله</span></h1>
-            <p class="hero-lead">من هادی پاشایی هستم؛ دانشجوی مهندسی برق و علاقه‌مند به الکترونیک، میکروکنترلرها، اتوماسیون صنعتی و توسعه نرم‌افزار. اینجا مسیر یادگیری و پروژه‌هایی را می‌بینی که روی آن‌ها کار کرده‌ام.</p>
-            <div class="actions">
-              <a class="button button-primary" href="#projects">دیدن پروژه‌ها <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-              <a class="button button-secondary" href="https://t.me/Hadipashaw" target="_blank" rel="noopener noreferrer">پیام در تلگرام</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div class="visual-frame">
-              <div class="visual-placeholder" id="hero-image-frame">
-                <img class="hero-photo" src="assets/images/hero-workbench.webp" alt="میز کار و ابزارهای مهندسی برق هادی" loading="eager" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true">
-                <div class="visual-fallback" role="img" aria-label="جایگاه موقت عکس میز کار یا یکی از پروژه‌های واقعی">
-                  <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="11" width="46" height="34" rx="4"/><path d="M23 53h18M32 45v8M17 19h30M18 27h9m-9 7h14M42 29l4 4-4 4"/><circle cx="43" cy="22" r="2"/></svg>
-                  <strong>عکس میز کار</strong>
-                  <small>assets/images/hero-workbench.webp</small>
-                </div>
-              </div>
-            </div>
-            <p class="visual-note">بدون تصویر ساختگی؛ عکس واقعی بعداً اضافه شود</p>
-          </div>
-        </div>
-        <div class="quick-facts" aria-label="حوزه‌های اصلی">
-          <div class="fact"><strong>الکترونیک و Arduino</strong><span>ساخت و آزمایش پروژه‌های عملی</span></div>
-          <div class="fact"><strong>PLC و اتوماسیون</strong><span>حدود ۳ سال یادگیری طبق گفته خودم</span></div>
-          <div class="fact"><strong>Python و وب</strong><span>توسعه، اشکال‌زدایی و بهبود کد</span></div>
-        </div>
-      </div>
-    </section>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">Built by <span>Hadi Pashaei</span> — 2026</div>
+  <div class="footer-links">
+    <a href="https://github.com/hadipashaw" target="_blank" rel="noopener" aria-label="GitHub">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="https://t.me/Hadipashaw" target="_blank" rel="noopener" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      Telegram
+    </a>
+    <a href="https://www.instagram.com/hadipashaw" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      Instagram
+    </a>
+  </div>
+</footer>
 
-    <section class="content-section" id="about" aria-labelledby="about-title">
-      <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker">01 / درباره من</p><h2 id="about-title">کنجکاوی، آزمون و خطا</h2></div><p class="section-intro">علاقه‌ام به تکنولوژی از کودکی شروع شد و بعدها آن را با یادگیری و ساخت پروژه دنبال کردم.</p></div>
-        <div class="about-grid">
-          <div class="about-copy">
-            <p>از بچگی به تکنولوژی علاقه داشتم و وقتی فرصت پیدا کردم، جدی‌تر دنبالش رفتم. حالا در مسیر مهندسی برق، به ارتباط بین سخت‌افزار، کد و سیستم‌های کنترلی علاقه‌مندم.</p>
-            <p>بخش مهمی از یادگیری برای من، دیباگ کردن است: پیدا کردن علت رفتار اشتباه، بررسی راه‌حل‌ها و آزمایش دوباره. این تجربه را در پروژه‌های نرم‌افزاری، کدهای Python و HTML و CSS، کار با آردوینو و حتی هنگام کار با اسیلوسکوپ دنبال کرده‌ام.</p>
-            <p>این پورتفولیو عمداً فقط اطلاعاتی را نمایش می‌دهد که فعلاً مشخص‌اند. جزئیات فنی، تصاویر، تاریخ‌های دقیق و وضعیت نهایی بعضی پروژه‌ها پس از تکمیل اطلاعات اضافه می‌شوند.</p>
-          </div>
-          <div class="principles">
-            <article class="principle"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3M9 9h6v6H9z"/></svg></span><div><h3>سخت‌افزار و الکترونیک</h3><p>پروژه‌های میکروکنترلری و آشنایی عملی با قطعات و ابزار آزمایشگاهی.</p></div></article>
-            <article class="principle"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M14 4l-4 16"/></svg></span><div><h3>کدنویسی و دیباگ</h3><p>ساخت، اصلاح و عیب‌یابی اپلیکیشن‌ها و رابط‌های وب.</p></div></article>
-            <article class="principle"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V8l8-4 8 4v12M8 20v-6h8v6M2 20h20M8 9h.01M12 9h.01M16 9h.01"/></svg></span><div><h3>کنترل و اتوماسیون</h3><p>علاقه و سابقه یادگیری در حوزه PLC؛ جزئیات مدل‌ها و پروژه‌ها در انتظار تکمیل.</p></div></article>
-          </div>
-        </div>
-      </div>
-    </section>
+<script>
+/* اسکرول نرم به بخش‌ها */
+function scrollToSection(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const navH = document.querySelector('nav').offsetHeight;
+  window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - navH - 10, behavior: 'smooth' });
+}
 
-    <section class="content-section" id="skills" aria-labelledby="skills-title">
-      <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker">02 / مهارت‌ها</p><h2 id="skills-title">چیزهایی که با آن‌ها کار می‌کنم</h2></div><p class="section-intro">به‌جای درصدهای تخمینی، نوع تجربه و وضعیت یادگیری نوشته شده است.</p></div>
-        <div class="skills-grid">
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/></svg></span><h3>Arduino و الکترونیک</h3></div><p>تجربه عملی در پروژه‌های میکروکنترلری؛ جزئیات بیشتر هر پروژه در کارت‌های نمونه‌کار آمده است.</p><span class="skill-note">پروژه عملی</span></article>
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 8-4 4 4 4m8-8 4 4-4 4M14 4l-4 16"/></svg></span><h3>C++</h3></div><p>استفاده در حد پروژه‌های میکروکنترلری و کدنویسی مرتبط با Arduino.</p><span class="skill-note">کاربرد پروژه‌ای</span></article>
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-5 0-5 3-5 5v2h6v2H7c-3 0-4 2-4 5s2 4 5 4 4-2 4-5v-2m0-11h5c3 0 4 2 4 5s-2 4-5 4h-4"/><circle cx="9" cy="6" r=".7"/><circle cx="16" cy="17" r=".7"/></svg></span><h3>Python</h3></div><p>حدود ۳ سال یادگیری و توسعه؛ تمرکز روی ساخت ابزار و رفع اشکال کد.</p><span class="skill-note">در حال یادگیری و توسعه</span></article>
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01M7 13l2 2 4-4"/></svg></span><h3>HTML و CSS</h3></div><p>ساخت و اصلاح وب‌سایت، از جمله رابط فارسی راست‌چین و واکنش‌گرا.</p><span class="skill-note">ساخت و اصلاح وب‌سایت</span></article>
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 8h8M8 12h3m2 0h3M8 16h8"/></svg></span><h3>PLC</h3></div><p>حدود ۳ سال یادگیری بر اساس گفته خودم؛ برند، مدل، زبان‌ها و سطح کار عملی هنوز مشخص نشده‌اند.</p><span class="skill-note">جزئیات نیازمند تکمیل</span></article>
-          <article class="skill"><div class="skill-top"><span class="icon-box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12h4l3-8 5 16 3-8h5"/></svg></span><h3>ابزارهای آزمایشگاهی</h3></div><p>تجربه کار با اسیلوسکوپ را در مسیر یادگیری دارم؛ مدل دستگاه و آزمایش‌های انجام‌شده مشخص نشده‌اند.</p><span class="skill-note">تجربه اولیه / جزئیات نامشخص</span></article>
-        </div>
-      </div>
-    </section>
+/* منوی موبایل */
+const navToggle = document.getElementById('nav-toggle');
+const siteNav = document.getElementById('site-nav');
+navToggle.addEventListener('click', () => {
+  const open = siteNav.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', open);
+});
+document.querySelectorAll('.nav-links button').forEach(b => b.addEventListener('click', () => {
+  siteNav.classList.remove('open');
+  navToggle.setAttribute('aria-expanded', 'false');
+}));
 
-    <section class="content-section" id="projects" aria-labelledby="projects-title">
-      <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker">03 / پروژه‌ها</p><h2 id="projects-title">نمونه‌کارها</h2></div><p class="section-intro">شرح پروژه‌ها بر اساس اطلاعات فعلی است؛ نتیجه، تاریخ و لینک دمو فقط پس از تأیید اضافه می‌شوند.</p></div>
-        <div class="project-grid">
-          <article class="project-card">
-            <div class="project-image"><img src="assets/images/emochi.webp" alt="پروژه EMOchi با Arduino Uno و نمایشگر OLED SSD1306" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت عکس پروژه EMOchi"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="34" height="32" rx="6"/><rect x="13" y="15" width="22" height="16" rx="3"/><circle cx="19" cy="22" r="2"/><circle cx="29" cy="22" r="2"/><path d="M18 27h12M3 17h4m34 0h4M17 4v4m14-4v4"/></svg><span>assets/images/emochi.webp</span></div></div>
-            <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 01</span></div><h3>EMOchi</h3><p>پروژه‌ای مبتنی بر Arduino Uno با نمایشگر OLED مدل SSD1306 و کتابخانه RoboEyes. هدف، قابلیت‌ها و نتیجه نهایی هنوز به‌صورت دقیق مستند نشده‌اند.</p><div class="project-detail"><strong>سخت‌افزار / فناوری تأییدشده</strong><span class="ltr">Arduino Uno · OLED SSD1306 · RoboEyes</span></div><div class="tags"><span class="tag">Arduino</span><span class="tag">OLED</span><span class="tag">RoboEyes</span></div></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image"><img src="assets/images/uniclass.webp" alt="اسکرین‌شات اپلیکیشن اندروید Uniclass" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت تصویر اپلیکیشن Uniclass"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="4" width="24" height="40" rx="4"/><path d="M19 9h10M20 37h8M17 15h14v17H17zM20 19h8m-8 4h8m-8 4h5"/></svg><span>assets/images/uniclass.webp</span></div></div>
-            <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 02</span></div><h3>Uniclass</h3><p>اپلیکیشن اندروید. طبق اطلاعات فعلی، پروژه با کمک Google AI Studio توسعه داده شده است؛ قابلیت‌های اصلی، وضعیت انتشار و جزئیات فنی نیازمند تکمیل‌اند.</p><div class="project-detail"><strong>اطلاعات تأییدشده</strong>اپلیکیشن اندروید · Google AI Studio</div><div class="tags"><span class="tag">Android</span><span class="tag">Google AI Studio</span></div></div>
-          </article>
-          <article class="project-card">
-            <div class="project-image"><img src="assets/images/artibaft.webp" alt="اسکرین‌شات وب‌سایت فروشگاه قلاب‌بافی Artibaft با رابط فارسی" loading="lazy" decoding="async" onload="this.parentElement.classList.add('has-photo')" onerror="this.hidden=true"><div class="image-fallback" role="img" aria-label="جایگاه موقت تصویر وب‌سایت Artibaft"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="7" width="40" height="34" rx="4"/><path d="M4 15h40M10 11h.01M14 11h.01M18 11h.01M12 23h24M12 29h15M12 35h20"/></svg><span>assets/images/artibaft.webp</span></div></div>
-            <div class="project-content"><div class="project-meta"><span class="status">جزئیات در حال تکمیل</span><span class="project-index">پروژه 03</span></div><h3>Artibaft</h3><p>وب‌سایت فروشگاه محصولات قلاب‌بافی با رابط فارسی و چیدمان راست‌چین (RTL). جزئیات قابلیت‌ها، وضعیت فعلی و لینک آنلاین بعداً اضافه می‌شوند.</p><div class="project-detail"><strong>فناوری / ویژگی تأییدشده</strong>رابط فارسی · طراحی راست‌چین</div><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">RTL</span></div></div>
-          </article>
-        </div>
-        <p class="timeline-note">عکس‌ها را در پوشه <code dir="ltr">assets/images/</code> قرار بده و نام فایل‌ها را دقیقاً مطابق مسیرهای روی کارت‌ها نگه دار. تا وقتی عکسی اضافه نشده باشد، جایگاه موقت نمایش داده می‌شود. لینک مخزن یا دمو نیز پس از تأیید اضافه شود.</p>
-      </div>
-    </section>
+/* ماشین تایپ متن هدر */
+(function(){
+  const phrases = ['Electrical Engineering Student','PLC & Industrial Automation','Arduino Developer','Python Programmer','Robotics Builder'];
+  const el = document.getElementById('typewriter-text');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion) { el.textContent = phrases[0]; return; }
+  let pi=0, ci=0, del=false, wait=0;
+  function tick(){
+    const p = phrases[pi];
+    if (wait>0){ wait--; setTimeout(tick,80); return; }
+    if (!del){ el.textContent = p.slice(0,ci+1); ci++; if (ci===p.length){ wait=22; del=true; } }
+    else { el.textContent = p.slice(0,ci-1); ci--; if (ci===0){ del=false; pi=(pi+1)%phrases.length; wait=8; } }
+    setTimeout(tick, del?45:90);
+  }
+  tick();
+})();
 
-    <section class="content-section" id="journey" aria-labelledby="journey-title">
-      <div class="wrap">
-        <div class="section-head"><div><p class="section-kicker">04 / مسیر یادگیری</p><h2 id="journey-title">حوزه‌هایی که دنبال کرده‌ام</h2></div><p class="section-intro">مدت‌ها از گفته خودم نقل شده‌اند؛ تاریخ شروع دقیق برای هر مورد هنوز ثبت نشده است.</p></div>
-        <div class="timeline">
-          <article class="timeline-item"><strong>علاقه به تکنولوژی</strong><span>از کودکی</span><p>علاقه مداوم به فناوری و ابزارهای دیجیتال.</p></article>
-          <article class="timeline-item"><strong>Python</strong><span>حدود ۳ سال</span><p>یادگیری، توسعه و رفع اشکال کد.</p></article>
-          <article class="timeline-item"><strong>PLC</strong><span>حدود ۳ سال</span><p>یادگیری اتوماسیون؛ مدل و تجربه عملی باید مشخص شود.</p></article>
-          <article class="timeline-item"><strong>Arduino</strong><span>حدود ۱ سال</span><p>پروژه‌های میکروکنترلری و الکترونیک.</p></article>
-          <article class="timeline-item"><strong>دانشگاه</strong><span>حدود ۱ سال</span><p>تحصیل در رشته مهندسی برق.</p></article>
-        </div>
-        <p class="timeline-note">ترتیب بالا خط زمانی دقیق نیست؛ برای جلوگیری از ساختن سابقه، مدت‌ها بدون تاریخ تقویمی نمایش داده شده‌اند.</p>
-      </div>
-    </section>
+/* ظاهر شدن بخش‌ها هنگام اسکرول */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 
-    <section class="content-section" id="contact" aria-labelledby="contact-title">
-      <div class="wrap">
-        <div class="contact-panel"><div><p class="section-kicker" style="color:#aebeff">ارتباط</p><h2 id="contact-title">برای گفت‌وگو درباره پروژه‌ها</h2><p>راه ارتباطی اصلی من تلگرام است. برای جلوگیری از فرم‌های نمایشی یا ناامن، فعلاً فرم تماس در این صفحه قرار نگرفته است.</p></div><a class="button" href="https://t.me/Hadipashaw" target="_blank" rel="noopener noreferrer">پیام در تلگرام <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a></div>
-      </div>
-    </section>
-  </main>
+/* وضعیت فعال منو هنگام اسکرول */
+const allSections = document.querySelectorAll('section[id]');
+const navBtns = document.querySelectorAll('.nav-links button');
+window.addEventListener('scroll', () => {
+  let current = '';
+  allSections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) current = s.id; });
+  navBtns.forEach(b => {
+    const match = b.getAttribute('onclick').match(/'(\w+)'/);
+    b.classList.toggle('active', match && match[1] === current);
+  });
+});
 
-  <footer>
-    <div class="wrap footer-inner"><span>© <span id="year">2026</span> هادی پاشایی · ساخته‌شده با HTML و CSS</span><div class="footer-links"><a href="https://github.com/hadipashaw" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://t.me/Hadipashaw" target="_blank" rel="noopener noreferrer">Telegram</a><a href="https://www.instagram.com/hadipashaw" target="_blank" rel="noopener noreferrer">Instagram</a></div></div>
-  </footer>
-  <script>
-    // فقط سال جاری را در پاورقی به‌روزرسانی می‌کند؛ هیچ وابستگی جاوااسکریپتی لازم نیست.
-    document.getElementById('year').textContent = String(new Date().getFullYear());
-  </script>
+/* پس‌زمینه مدار — خفیف و بدون تداخل با عملکرد صفحه */
+(function() {
+  const canvas = document.getElementById('circuit-canvas');
+  const ctx = canvas.getContext('2d');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let W, H, lines = [];
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+    generate();
+  }
+  function generate() {
+    lines = [];
+    const step = 64;
+    const cols = Math.ceil(W/step)+1, rows = Math.ceil(H/step)+1;
+    for (let r=0; r<rows; r++) {
+      let x=0;
+      while (x<W) { const l = step*(1+Math.floor(Math.random()*3)); if (Math.random()>0.4) lines.push({x1:x,y1:r*step,x2:x+l,y2:r*step}); x+=l; }
+    }
+    for (let c=0; c<cols; c++) {
+      let y=0;
+      while (y<H) { const l = step*(1+Math.floor(Math.random()*3)); if (Math.random()>0.5) lines.push({x1:c*step,y1:y,x2:c*step,y2:y+l}); y+=l; }
+    }
+  }
+  function draw() {
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle = 'rgba(193,127,79,0.35)';
+    ctx.lineWidth = 0.6;
+    lines.forEach(l => { ctx.beginPath(); ctx.moveTo(l.x1,l.y1); ctx.lineTo(l.x2,l.y2); ctx.stroke(); });
+  }
+  window.addEventListener('resize', resize);
+  resize();
+  draw();
+  if (!reduceMotion) {
+    window.addEventListener('resize', draw);
+  }
+})();
+</script>
 </body>
 </html>
