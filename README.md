@@ -1,157 +1,114 @@
-<div align="center">
+<div dir="rtl">
+
+# هادی پاشایی | Hadi Pashaei — پورتفولیو شخصی
+
+سایت شخصی من: [hadipashaw.github.io](https://hadipashaw.github.io)
+
+یه صفحه‌ی تک‌فایلی (single-page) برای معرفی خودم، مهارت‌ها، پروژه‌ها و مسیری که تا الان طی کردم — دانشجوی مهندسی برق، علاقه‌مند به رباتیک، اتوماسیون صنعتی (PLC) و امنیت سایبری.
+
+---
+
+## ساختار پروژه
 
 ```
-██╗  ██╗ █████╗ ██████╗ ██╗
-██║  ██║██╔══██╗██╔══██╗██║
-███████║███████║██║  ██║██║
-██╔══██║██╔══██║██║  ██║██║
-██║  ██║██║  ██║██████╔╝██║
-╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝
+hadipashaw.github.io/
+├── index.html          # کل سایت (HTML + CSS + JS در یک فایل)
+└── images/              # عکس‌های پروژه‌ها
+    ├── emo-robot.jpg
+    ├── plc-industrial.jpg
+    ├── cybersecurity.jpg
+    ├── oled-emotion.jpg
+    ├── python-tools.jpg
+    └── embedded-systems.jpg
 ```
 
-**`Electrical Engineering Student · Builder · Explorer`**
+هیچ فریم‌ورک یا بیلدی لازم نیست — کل سایت یک فایل `index.html` خالصه (vanilla HTML/CSS/JS) و مستقیم روی GitHub Pages سرو می‌شه.
 
-[![Live](https://img.shields.io/badge/🌐_Live_Site-Visit-00e5ff?style=for-the-badge&labelColor=030810)](https://hadipashaw.github.io/who-THE-FUCK-I-AM/)
-[![GitHub](https://img.shields.io/badge/GitHub-hadipashaw-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hadipashaw)
-[![Telegram](https://img.shields.io/badge/Telegram-@hadipashaw-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/Hadipashaw)
-[![Instagram](https://img.shields.io/badge/Instagram-hadipashaw-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/hadipashaw)
+---
+
+## بخش‌های سایت
+
+- **خانه** — معرفی کوتاه + تگ‌های حوزه کاری
+- **درباره** — کارت هویت و متن معرفی
+- **مهارت‌ها** — مهارت‌های فنی با برچسب سطح (نه درصد ساختگی) + زبان‌ها و ابزارها
+- **پروژه‌ها** — کارت هر پروژه با تصویر، تگ‌های فناوری و توضیح
+- **مسیر** — تایم‌لاین مراحل یادگیری تا امروز
+- **تماس** — لینک مستقیم به تلگرام
+
+### ویجت‌های تعاملی
+- **چشم‌های EMO** (کنار لوگو در نوار بالا) — با موس/لمس دنبالت می‌کنن؛ اشاره‌ای به پروژه‌ی ربات EMO خودم
+- **اسیلوسکوپ زنده** (در صفحه‌ی خانه) — موج sine/square که با حرکت موس فرکانس و دامنه‌ش عوض می‌شه
+
+---
+
+## تکنولوژی
+
+- HTML5 / CSS3 (بدون فریم‌ورک)
+- JavaScript خالص (Vanilla JS) — بدون کتابخانه خارجی
+- فونت [Vazirmatn](https://github.com/rastikerdar/vazirmatn) برای فارسی
+- Canvas API برای پس‌زمینه‌ی مداری و اسیلوسکوپ
+- `prefers-reduced-motion` و `focus-visible` برای دسترس‌پذیری
+
+---
+
+## راه‌اندازی محلی
+
+نیازی به نصب یا بیلد نیست. کافیه فایل `index.html` رو مستقیم تو مرورگر باز کنی، یا با یه سرور ساده:
+
+```bash
+python3 -m http.server 8000
+```
+
+بعد برو به `http://localhost:8000`
+
+---
+
+## افزودن عکس پروژه‌ها
+
+عکس هر پروژه رو با همین اسم‌ها داخل پوشه‌ی `images/` بذار (نسبت تصویر ۱۶:۹، حداقل ۸۰۰×۴۵۰، حجم زیر ۳۰۰ کیلوبایت):
+
+| پروژه | فایل |
+|---|---|
+| ربات EMO | `images/emo-robot.jpg` |
+| پروژه‌های PLC صنعتی | `images/plc-industrial.jpg` |
+| پروژه‌های امنیت سایبری | `images/cybersecurity.jpg` |
+| OLED Emotion System | `images/oled-emotion.jpg` یا `.gif` |
+| ابزارهای Python | `images/python-tools.jpg` |
+| Embedded Control Systems | `images/embedded-systems.jpg` |
+
+---
+
+## کارهای باقی‌مانده (To-Do)
+
+- [ ] جایگزینی عکس واقعی پروژه‌ها در `images/`
+- [ ] تکمیل جزئیات فنی هر پروژه (مشکل، راه‌حل، چالش، نتیجه)
+- [ ] افزودن `og:image` و `favicon`
+
+---
+
+## دسترسی
+
+- GitHub: [@hadipashaw](https://github.com/hadipashaw)
+- Telegram: [@Hadipashaw](https://t.me/Hadipashaw)
+- Instagram: [@hadipashaw](https://www.instagram.com/hadipashaw)
 
 </div>
 
 ---
 
-## ⚡ Who the f*ck is Hadi?
+<div dir="ltr">
 
-> مهندسی که از سیم و کد چیزی می‌سازد که قبلاً وجود نداشت.
+## English
 
-دانشجوی **مهندسی برق**، متولد **۲۰۰۷**. از زمانی که اولین مدار را لحیم کردم، یک چیز فهمیدم: قدرت واقعی در جایی‌ست که **سخت‌افزار و نرم‌افزار با هم کار می‌کنند**.
+A single-page personal portfolio for Hadi Pashaei — electrical engineering student, hardware/robotics hobbyist, with hands-on experience in PLC programming (Ladder, FBD, STL), Arduino, Python, and cybersecurity/Linux.
 
-امروز روی پل زدن بین **دنیای صنعت** و **هوش مصنوعی** کار می‌کنم — سیستم‌هایی که فکر کنند، تصمیم بگیرند و کار کنند.
+**Stack:** plain HTML/CSS/JS, no build step, no frameworks — deployed directly via GitHub Pages.
 
----
-
-## 🛠 Tech Stack
-
-```
-Industrial Automation          ████████████████████ 88%
-Arduino & Embedded Systems     ███████████████████░ 85%
-Python                         ████████████████░░░░ 80%
-Web  (HTML / CSS)              ███████████████░░░░░ 75%
-Robotics & AI                  ███████████████░░░░░ 78%
-Cybersecurity & Linux          ██████████████░░░░░░ 72%
+**Run locally:**
+```bash
+python3 -m http.server 8000
 ```
 
-### Languages & Tools
-
-| Domain | Stack |
-|--------|-------|
-| **PLC / Industrial** | Ladder Logic · FBD · STL |
-| **Embedded** | Arduino · C++ · I²C · UART |
-| **Software** | Python · HTML · CSS |
-| **Security** | Linux · Network Analysis |
-| **AI / Robotics** | Sensor Fusion · OLED Animation |
-
----
-
-## 🚀 Featured Projects
-
-### 🤖 EMO Robot — Personal Build
-> ربات هوشمند با سیستم احساسات
-
-A personal robot inspired by EMO, built entirely from scratch. Features:
-- **OLED 128×64** animated eye expressions (HAPPY, ANGRY, SLEEPY, SURPRISED, CRYING, DIZZY)
-- **MPU6500 IMU** for shake/flip detection → DIZZY mode
-- **TTP223 Touch Sensor** for physical interaction
-- Full emotion state machine in C++
-
-`Arduino` `OLED SSD1306` `C++` `I²C` `MPU6500`
-
----
-
-### 🏭 PLC Industrial Projects
-> اتوماسیون صنعتی روی خط تولید
-
-Multiple real-world industrial control projects using PLC programming. Deployed in actual production environments — not just simulations.
-
-`Ladder Logic` `FBD` `STL` `SCADA` `Industrial Automation`
-
----
-
-### 🔒 Cybersecurity Projects
-> امنیت شبکه و تست نفوذ
-
-Active work in cybersecurity — network analysis, vulnerability assessment, and security tooling on Linux environments.
-
-`Linux` `Network Analysis` `Penetration Testing`
-
----
-
-### 📺 OLED Emotion Engine
-> هر فریم، دستی طراحی‌شده
-
-A pixel-by-pixel emotion rendering system for 128×64 OLED displays. Every expression frame hand-crafted as bitmap arrays. Smooth transitions between states with timing control.
-
-`Bitmap Arrays` `Frame Animation` `Adafruit SSD1306` `Arduino`
-
----
-
-## 🗺 Journey
-
-```
-[STEP 01] ──── Electronics & Circuits
-               First solder. First spark. First "it actually works."
-                         │
-[STEP 02] ──── Arduino & Programming
-               C++, sensors, serial comms. Hardware meets code.
-                         │
-[STEP 03] ──── Industrial World — PLC
-               Ladder, FBD, STL. Real machines. Real responsibility.
-                         │
-[STEP 04] ──── Cybersecurity & Linux
-               Networks, vulnerabilities, the other side of tech.
-                         │
-[NOW ───] ──── Electrical Engineering + AI
-               Bridging everything. Building the future.
-```
-
----
-
-## 🌐 This Repo
-
-این repository، سورس‌کد سایت شخصیمه — **یک فایل HTML خالص**، بدون framework، بدون dependency خارجی.
-
-```
-who-THE-FUCK-I-AM/
-└── index.html          # Everything. One file. Pure HTML/CSS/JS.
-```
-
-**Features built in:**
-- ⚡ Animated circuit board canvas (pure Canvas API)
-- 🎵 Generative ambient music engine (Web Audio API · 432Hz · Theta binaural beats)
-- 🌊 Scroll-triggered reveal animations
-- 💡 Cursor glow effect
-- 📱 Fully responsive
-
-**No React. No Vue. No npm install. Just open the file.**
-
----
-
-## 📡 Contact
-
-پیامم بده — تلگرام سریع‌ترین راهه.
-
-<div align="center">
-
-**[✈ t.me/Hadipashaw](https://t.me/Hadipashaw)**
-
-</div>
-
----
-
-<div align="center">
-
-`Built by HADI · 2007 → ∞`
-
-*"The best way to predict the future is to build it."*
+See the Persian section above for the full file structure, image-folder naming convention, and remaining to-dos.
 
 </div>
