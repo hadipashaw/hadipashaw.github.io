@@ -12,14 +12,13 @@
 
 ```
 hadipashaw.github.io/
-├── index.html          # کل سایت (HTML + CSS + JS در یک فایل)
-└── images/              # عکس‌های پروژه‌ها
-    ├── emo-robot.jpg
-    ├── plc-industrial.jpg
-    ├── cybersecurity.jpg
-    ├── oled-emotion.jpg
-    ├── python-tools.jpg
-    └── embedded-systems.jpg
+├── index.html              # کل سایت (HTML + CSS + JS در یک فایل)
+└── assets/
+    └── images/
+        ├── hero-workbench.webp   # پس‌زمینه بخش هدر (Hero)
+        ├── emochi.webp           # ربات EMO
+        ├── artibaft.webp         # وبسایت آرتی‌بافت
+        └── uniclass.webp         # اپ اندرویدی یونی‌کلاس
 ```
 
 هیچ فریم‌ورک یا بیلدی لازم نیست — کل سایت یک فایل `index.html` خالصه (vanilla HTML/CSS/JS) و مستقیم روی GitHub Pages سرو می‌شه.
@@ -63,25 +62,25 @@ python3 -m http.server 8000
 
 ---
 
-## افزودن عکس پروژه‌ها
+## پروژه‌ها و عکس‌هاشون
 
-عکس هر پروژه رو با همین اسم‌ها داخل پوشه‌ی `images/` بذار (نسبت تصویر ۱۶:۹، حداقل ۸۰۰×۴۵۰، حجم زیر ۳۰۰ کیلوبایت):
+| پروژه | فایل عکس | وضعیت |
+|---|---|---|
+| ربات EMO | `assets/images/emochi.webp` | ✅ عکس واقعی |
+| وبسایت آرتی‌بافت | `assets/images/artibaft.webp` | ✅ عکس واقعی |
+| یونی‌کلاس (اپ اندروید یادآور کلاس) | `assets/images/uniclass.webp` | ✅ عکس واقعی |
+| پروژه‌های PLC صنعتی | — | ⏳ در انتظار عکس |
+| پروژه‌های امنیت سایبری | — | ⏳ در انتظار عکس |
+| Embedded Control Systems | — | ⏳ در انتظار عکس |
 
-| پروژه | فایل |
-|---|---|
-| ربات EMO | `images/emo-robot.jpg` |
-| پروژه‌های PLC صنعتی | `images/plc-industrial.jpg` |
-| پروژه‌های امنیت سایبری | `images/cybersecurity.jpg` |
-| OLED Emotion System | `images/oled-emotion.jpg` یا `.gif` |
-| ابزارهای Python | `images/python-tools.jpg` |
-| Embedded Control Systems | `images/embedded-systems.jpg` |
+عکس `hero-workbench.webp` به‌عنوان پس‌زمینه‌ی بخش «خانه» (Hero) استفاده می‌شه، نه کارت یه پروژه خاص.
 
 ---
 
 ## کارهای باقی‌مانده (To-Do)
 
-- [ ] جایگزینی عکس واقعی پروژه‌ها در `images/`
-- [ ] تکمیل جزئیات فنی هر پروژه (مشکل، راه‌حل، چالش، نتیجه)
+- [ ] افزودن عکس برای پروژه‌های PLC، امنیت سایبری و Embedded Control Systems
+- [ ] تکمیل جزئیات فنی هر پروژه (مشکل، راه‌حل، چالش، نتیجه) — از جمله آرتی‌بافت و یونی‌کلاس
 - [ ] افزودن `og:image` و `favicon`
 
 ---
