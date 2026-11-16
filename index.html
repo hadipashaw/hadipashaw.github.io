@@ -6,7 +6,7 @@
 <meta name="google-site-verification" content="OFwazxc5RojN6JMEE-yeHDcwxuf5TZ4-w1x7Wxeph8I" />
 <title>هادی پاشایی | Hadi Pashaei — Electrical Engineer & Builder</title>
 
-<meta name="description" content="هادی پاشایی؛ دانشجوی مهندسی برق و علاقه‌مند به اتوماسیون صنعتی، PLC، آردوینو و برنامه‌نویسی پایتون. مجموعه‌ای از پروژه‌های نرم‌افزاری و سخت‌افزاری شخصی.">
+<meta name="description" content="هادی پاشایی (Hadi Pashaei) — دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.">
 <meta name="keywords" content="هادی پاشایی, Hadi Pashaei, hadipashaw, مهندس برق, PLC, Arduino, Robotics, رباتیک, امنیت سایبری, Python, Embedded Systems">
 <meta name="author" content="Hadi Pashaei - هادی پاشایی">
 <meta name="robots" content="index, follow">
@@ -23,7 +23,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="هادی پاشایی | Hadi Pashaei — Electrical Engineer & Builder">
-<meta property="og:description" content="دانشجوی مهندسی برق و علاقه‌مند به اتوماسیون صنعتی، PLC، آردوینو و برنامه‌نویسی پایتون؛ همراه با پروژه‌های نرم‌افزاری و سخت‌افزاری شخصی.">
+<meta property="og:description" content="دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.">
 <meta property="og:url" content="https://hadipashaw.github.io/">
 <meta property="og:locale" content="fa_IR">
 <meta property="og:site_name" content="Hadi Pashaei">
@@ -45,7 +45,7 @@
   "url": "https://hadipashaw.github.io/",
   "image": "https://avatars.githubusercontent.com/u/258557607?v=4",
   "jobTitle": "Electrical Engineering Student",
-  "description": "دانشجوی مهندسی برق و علاقه‌مند به اتوماسیون صنعتی، PLC، آردوینو و برنامه‌نویسی پایتون؛ همراه با پروژه‌های نرم‌افزاری و سخت‌افزاری شخصی.",
+  "description": "دانشجوی مهندسی برق، سازنده ربات و سیستم‌های تعبیه‌شده. متخصص PLC، آردوینو، پایتون، امنیت سایبری و لینوکس.",
   "sameAs": [
     "https://github.com/hadipashaw",
     "https://t.me/Hadipashaw",
@@ -118,6 +118,7 @@ nav {
   width: 20px; height: 20px; border-radius: 6px;
   background: var(--surface2); border: 1px solid var(--border);
   display: grid; place-items: center; overflow: hidden;
+  transition: transform 0.1s ease;
 }
 .emo-pupil { width: 7px; height: 7px; border-radius: 2px; background: var(--copper-lt); transition: transform 0.06s linear; }
 
@@ -222,7 +223,6 @@ section { padding: 100px 0; }
   color: var(--copper-lt);
 }
 .id-avatar svg { width: 34px; height: 34px; }
-.id-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
 .id-name { font-size: 1.1rem; font-weight: 700; color: var(--white); }
 .id-role { font-size: 0.85rem; color: var(--muted); margin-top: 4px; margin-bottom: 20px; }
 .id-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border-top: 1px solid var(--border); padding-top: 20px; }
@@ -279,7 +279,9 @@ section { padding: 100px 0; }
   display: flex; flex-direction: column;
   transition: border-color 0.25s, transform 0.25s;
 }
-.project-card:hover { border-color: rgba(193,127,79,0.4); transform: translateY(-4px); }
+.project-card:hover { border-color: rgba(193,127,79,0.4); transform: translateY(-4px); box-shadow: 0 16px 40px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(193,127,79,0.08); }
+.skill-card, .identity-card, .contact-strip, .scope-card { transition: border-color 0.25s, box-shadow 0.25s; }
+.skill-card:hover { border-color: rgba(193,127,79,0.35); box-shadow: 0 10px 30px -14px rgba(0,0,0,0.5); }
 .project-media {
   aspect-ratio: 16/9; background: var(--surface2);
   display: grid; place-items: center; color: var(--muted);
@@ -307,7 +309,30 @@ section { padding: 100px 0; }
   transition: background 0.2s, border-color 0.2s;
 }
 .project-link:hover { background: rgba(193,127,79,0.1); border-color: rgba(193,127,79,0.6); }
-.project-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+.project-link svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.game-card { grid-column: 1 / -1; display: grid; grid-template-columns: 220px 1fr; gap: 0; }
+.game-frame-wrap {
+  background: #110a06; border-left: 1px solid var(--border);
+  display: grid; place-items: center; padding: 18px;
+}
+.game-frame-wrap iframe { width: 100px; height: 186px; border: none; image-rendering: pixelated; border-radius: 6px; }
+.game-body { padding: 26px 28px; display: flex; flex-direction: column; justify-content: center; }
+.game-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+.game-play-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--copper); color: #0a0d11; font-weight: 700;
+  padding: 9px 20px; border-radius: 999px; text-decoration: none; font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.game-play-btn:hover { background: var(--copper-lt); }
+.game-play-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.game-actions .project-link { margin-top: 0; }
+.game-actions .project-link svg { width: 16px; height: 16px; }
+@media (max-width: 680px) {
+  .game-card { grid-template-columns: 1fr; }
+  .game-frame-wrap { border-left: none; border-bottom: 1px solid var(--border); padding: 24px; }
+}
 
 /* TIMELINE */
 .timeline { position: relative; padding-right: 28px; border-right: 2px solid var(--border); }
@@ -403,7 +428,7 @@ footer {
   <div>
     <div class="hero-tag">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-      مهندسی برق · اتوماسیون · ساختن
+      مهندس برق · سازنده · کاوشگر
     </div>
     <h1 class="hero-name">هادی پاشایی</h1>
     <div class="hero-typewriter">
@@ -413,8 +438,8 @@ footer {
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01M9 17h6"/></svg>رباتیک</div>
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>PLC صنعتی</div>
       <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM7 14v1a5 5 0 0 0 5 5M17 14v1a5 5 0 0 1-5 5"/></svg>Python</div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>اتوماسیون صنعتی</div>
-      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>توسعه نرم‌افزار</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>امنیت سایبری</div>
+      <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Linux</div>
     </div>
     <div class="scope-card reveal" id="scope-card">
       <div class="scope-head">
@@ -430,7 +455,7 @@ footer {
     </div>
     <div class="hero-scroll">
       <button class="scroll-btn" onclick="scrollToSection('about')">
-        <span>چرخ بزن</span>
+        <span>کاوش کن</span>
         <div class="scroll-line"></div>
       </button>
     </div>
@@ -441,78 +466,76 @@ footer {
 <section id="about">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">من کیم ؟</div>
-      <h2 class="section-title">از مدار و کد تا پروژه‌های کاربردی</h2>
+      <div class="section-label">درباره من</div>
+      <h2 class="section-title">مهندسی که از کد و سیم دنیا می‌سازد</h2>
       <div class="section-line"></div>
     </div>
     <div class="about-grid">
       <div class="reveal">
         <div class="identity-card">
           <div class="id-avatar">
-            <img src="https://avatars.githubusercontent.com/u/258557607?v=4" alt="تصویر پروفایل هادی پاشایی" loading="lazy">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a8 8 0 0 1 16 0v1"/></svg>
           </div>
           <div class="id-name">هادی پاشایی</div>
-          <div class="id-role">Electrical Engineering Student · Automation</div>
+          <div class="id-role">Electrical Engineer & Builder</div>
           <div class="id-stats">
-            <div class="id-stat"><div class="val">الکترونیک صنعتی</div><div class="lbl">رشته تحصیلی</div></div>
-            <div class="id-stat"><div class="val">3+</div><div class="lbl">سال تجربه PLC و Python</div></div>
+            <div class="id-stat"><div class="val">برق</div><div class="lbl">رشته تحصیلی</div></div>
+            <div class="id-stat"><div class="val">10+</div><div class="lbl">پروژه انجام‌شده</div></div>
           </div>
         </div>
       </div>
       <div class="about-text reveal">
-    <p>من هادی‌ام، دانشجوی مهندسی برق. علاقه‌م به الکترونیک و کار با مدارها کم‌کم منو به سمت <span class="highlight">آردوینو، برنامه‌نویسی و اتوماسیون صنعتی</span> برد.</p>
-
-  <p>حدود سه ساله با <span class="highlight">PLC</span> و <span class="highlight">پایتون</span> کار می‌کنم و از یک سال پیش هم سراغ پروژه‌های آردوینو رفتم. کنار دانشگاه، روی پروژه‌های نرم‌افزاری و سخت‌افزاری خودم کار می‌کنم و سعی دارم ایده‌هام رو به چیزهایی تبدیل کنم که واقعاً بشه ازشون استفاده کرد.</p>
-
-<p>اینجا بخشی از پروژه‌هاییه که ساختم یا روشون کار کردم. هنوز کلی چیز برای یاد گرفتن دارم و هر پروژه برام فرصتیه برای تجربه کردن، بهتر شدن و ساختن چیزهای جدید.</p>
-</div>
-</div>
+        <p>بچه که بودم همیشه یه چیزی رو باز می‌کردم ببینم تو چی هست. اسباب‌بازی، رادیو، هرچی — مهم نبود بعدش بتونم دوباره ببندمش یا نه. همین عادت، بدون اینکه خودم بفهمم، تبدیل شد به علاقه به سخت‌افزار و رباتیک، و در نهایت کشوندم سمت <span class="highlight">مهندسی برق</span>.</p>
+        <p>الان هم درس می‌خونم، هم دنبال یه کار صنعتی‌ام — جایی که بشه با <span class="highlight">PLC</span>، آردوینو و سیستم‌های تعبیه‌شده واقعاً دست به کار شد، نه فقط تئوری. موازیش با <span class="highlight">پایتون</span> ابزارهای کوچیک برای خودم می‌سازم، و تو اوقات فراغت هم سراغ <span class="highlight">امنیت سایبری</span> و <span class="highlight">لینوکس</span> می‌رم — بیشتر از سر کنجکاوی تا تخصص رسمی.</p>
+        <p>پروژه‌های پایین این صفحه هنوز جزئیات فنی کامل ندارن (مشکل دقیق، راه‌حل، چالش‌ها) — دارم کم‌کم اینا رو می‌نویسم و جایگزین می‌کنم.</p>
+      </div>
+    </div>
+  </div>
 </section>
-
 
 <!-- SKILLS -->
 <section id="skills">
   <div class="container">
     <div class="reveal">
-      <div class="section-label">مهارت‌ ها</div>
-      <h2 class="section-title">مهارت‌ها و ابزارهایی که با آن‌ها کار می‌کنم</h2>
+      <div class="section-label">مهارت‌ها</div>
+      <h2 class="section-title">آنچه بلدم</h2>
       <div class="section-line"></div>
     </div>
     <div class="skills-grid">
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div>
         <h3>PLC & Industrial Automation</h3>
-        <p>حدود سه سال تجربه در کار با PLC و منطق کنترل صنعتی، از جمله Ladder، FBD و STL.</p>
+        <p>برنامه‌نویسی PLC با Ladder، STL و FBD. کار با سیستم‌های کنترل صنعتی.</p>
         <span class="skill-level">تجربه عملی</span>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
         <h3>Arduino & Embedded Systems</h3>
-        <p>حدود یک سال تجربه با آردوینو؛ ساخت پروژه‌های سخت‌افزاری و کار با نمایشگرها و قطعات الکترونیکی.</p>
+        <p>طراحی پروژه‌های سخت‌افزاری، کنترل سنسورها و سیستم‌های میکروکنترلری.</p>
         <span class="skill-level">تجربه عملی</span>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5 5 5 0 0 0 5-5V7a5 5 0 0 0-5-5zM7 14v1a5 5 0 0 0 5 5M17 14v1a5 5 0 0 1-5 5"/></svg></div>
         <h3>Python</h3>
-        <p>حدود سه سال تجربه با پایتون؛ از اسکریپت‌نویسی و ابزارهای کوچک تا استفاده در پروژه‌های شخصی.</p>
+        <p>اسکریپت‌نویسی، اتوماسیون و ارتباط نرم‌افزار با سخت‌افزار.</p>
         <span class="skill-level">تجربه عملی</span>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01M9 17h6"/></svg></div>
         <h3>Robotics & AI</h3>
-        <p>ترکیب آردوینو و نمایشگر OLED برای ساخت جلوه‌های چشمی و انیمیشن‌های ساده، مثل پروژه EMOchi.</p>
-        <span class="skill-level">پروژه شده</span>
+        <p>طراحی ربات، سیستم احساسات و انیمیشن OLED، ترکیب AI با سخت‌افزار.</p>
+        <span class="skill-level">در حال یادگیری</span>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div>
         <h3>Cybersecurity & Linux</h3>
-        <p>لینوکس و امنیت سایبری از حوزه‌هایی هستند که به آن‌ها علاقه دارم و در حال یادگیری و تمرین بیشترشان هستم.</p>
+        <p>فعالیت در حوزه امنیت سایبری، کار با توزیع‌های لینوکس.</p>
         <span class="skill-level">در حال یادگیری</span>
       </div>
       <div class="skill-card reveal">
         <div class="skill-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
         <h3>Web (HTML & CSS)</h3>
-        <p>ساخت و بهبود صفحات وب با HTML و CSS و کار روی رابط کاربری پروژه‌های شخصی.</p>
+        <p>ساخت رابط‌های وب و صفحات پورتفولیو.</p>
         <span class="skill-level">تجربه عملی</span>
       </div>
     </div>
@@ -546,7 +569,7 @@ footer {
         <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="7" width="16" height="12" rx="2"/><path d="M9 7V4h6v3M9 13h.01M15 13h.01"/></svg></div><div class="project-badge copper">robotics</div></div>
         <div class="project-body">
           <h3>ربات EMO — پروژه شخصی</h3>
-          <p>پروژه‌ای مبتنی بر Arduino Uno و نمایشگر OLED SSD1306 که با استفاده از RoboEyes، حالت‌ها و حرکت‌های چشمی را نمایش می‌دهد.</p>
+          <p>ربات با صفحه OLED برای نمایش حالت‌های چهره. جزئیات فنی (مشکل، راه‌حل، چالش‌ها) به‌زودی تکمیل می‌شود.</p>
           <div class="project-tags"><span class="ptag">Arduino</span><span class="ptag">OLED</span><span class="ptag">C++</span></div>
           <a href="https://github.com/hadipashaw/EMOchi" target="_blank" rel="noopener" class="project-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -562,7 +585,7 @@ footer {
         <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></div><div class="project-badge">industrial</div></div>
         <div class="project-body">
           <h3>پروژه‌های PLC صنعتی</h3>
-          <p>این بخش برای نمونه‌کارهای اتوماسیون صنعتی در نظر گرفته شده؛ جزئیات هر پروژه وقتی مستندات و نمونه قابل نمایش آماده باشد اضافه می‌شود.</p>
+          <p>کار با سیستم‌های کنترل صنعتی. جزئیات فنی هر پروژه به‌زودی اضافه می‌شود.</p>
           <div class="project-tags"><span class="ptag">Ladder</span><span class="ptag">FBD</span><span class="ptag">STL</span></div>
         </div>
       </div>
@@ -574,7 +597,7 @@ footer {
         <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg></div><div class="project-badge">security</div></div>
         <div class="project-body">
           <h3>پروژه‌های امنیت سایبری</h3>
-          <p>فعلاً نمونه‌کار مشخصی برای نمایش در این بخش ندارم؛ به‌جای معرفی کار تأییدنشده، این قسمت را بعد از آماده شدن یک پروژه مستند تکمیل می‌کنم.</p>
+          <p>فعالیت در حوزه امنیت سایبری با لینوکس. جزئیات به‌زودی اضافه می‌شود.</p>
           <div class="project-tags"><span class="ptag">Linux</span><span class="ptag">Networking</span></div>
         </div>
       </div>
@@ -585,10 +608,10 @@ footer {
         <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div><div class="project-badge copper">web</div></div>
         <div class="project-body">
           <h3>وبسایت آرتی‌بافت</h3>
-          <p>طراحی یک وب‌سایت فارسی و راست‌چین برای معرفی محصولات دست‌بافت آرتی‌بافت؛ با تمرکز روی نمایش مرتب محصولات و تجربه خرید ساده.</p>
+          <p>طراحی و پیاده‌سازی وبسایت برای آرتی‌بافت. جزئیات فنی (استک، چالش‌ها، نتیجه) به‌زودی تکمیل می‌شود.</p>
           <div class="project-tags"><span class="ptag">Web Design</span><span class="ptag">HTML/CSS</span></div>
           <a href="http://artibaft.ai.studio/" target="_blank" rel="noopener" class="project-link">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
             مشاهده سایت
           </a>
         </div>
@@ -600,7 +623,7 @@ footer {
         <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg></div><div class="project-badge">mobile</div></div>
         <div class="project-body">
           <h3>یونی‌کلاس (Uniclass)</h3>
-          <p>اپلیکیشن اندرویدی برای مدیریت برنامه کلاس‌های دانشگاه و یادآوری جلسه‌ها؛ در حال توسعه قابلیت‌هایی برای ثبت جزوه، عکس و یادداشت هر جلسه.</p>
+          <p>اپلیکیشن اندرویدی برای یادآوری و آلارم کلاس‌های دانشگاه. جزئیات فنی به‌زودی تکمیل می‌شود.</p>
           <div class="project-tags"><span class="ptag">Android</span><span class="ptag">Alarm/Reminders</span></div>
           <a href="https://github.com/hadipashaw/uniClasses" target="_blank" rel="noopener" class="project-link">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -608,16 +631,48 @@ footer {
           </a>
         </div>
       </div>
+      <div class="project-card game-card reveal">
+        <div class="game-frame-wrap">
+          <iframe src="https://hadipashaw.github.io/siddubey-decoder/" title="Decoded — بازی پیکسلی" loading="lazy"></iframe>
+        </div>
+        <div class="game-body">
+          <div class="project-header" style="padding:0 0 10px;"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="12" rx="3"/><circle cx="8" cy="13" r="1.5"/><circle cx="16" cy="11" r="1" fill="currentColor"/><circle cx="18" cy="14" r="1" fill="currentColor"/></svg></div><div class="project-badge copper">game</div></div>
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--white); margin-bottom:8px;">Decoded</h3>
+          <p style="font-size:0.88rem; color:var(--muted); line-height:1.8; margin-bottom:0;">یه بازی پیکسلی کوچیک که کامل با کد خام (بدون فریم‌ورک و بدون موتور بازی) ساختمش — کل منطق و رندر توی کمتر از چند کیلوبایت جاوااسکریپت خالص. همین کنار می‌تونی بازیش کنی.</p>
+          <div class="project-tags" style="margin-top:14px;"><span class="ptag">Canvas API</span><span class="ptag">Vanilla JS</span><span class="ptag">Pixel Art</span></div>
+          <div class="game-actions">
+            <a href="https://hadipashaw.github.io/siddubey-decoder/" target="_blank" rel="noopener" class="game-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              بازی تمام‌صفحه
+            </a>
+            <a href="https://github.com/hadipashaw/siddubey-decoder" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              مشاهده روی گیت‌هاب
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="project-card reveal">
         <div class="project-media">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="12" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 3L2 10.5l6.5 2.5L18 6l-8 9v5l3-3 4 2z"/></svg>
           جای عکس/اسکرین‌شات
         </div>
-        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/></svg></div><div class="project-badge">embedded</div></div>
+        <div class="project-header"><div class="project-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3L2 10.5l6.5 2.5L18 6l-8 9v5l3-3 4 2z"/></svg></div><div class="project-badge">bot</div></div>
         <div class="project-body">
-          <h3>Embedded Control Systems</h3>
-          <p>این بخش را برای پروژه‌های بعدی میکروکنترلری نگه داشته‌ام؛ وقتی نمونه‌ای با توضیح و تصویر آماده شود، اینجا قرار می‌گیرد.</p>
-          <div class="project-tags"><span class="ptag">Microcontroller</span><span class="ptag">Sensors</span></div>
+          <h3>ربات ناشناس تلگرام</h3>
+          <p>ربات تلگرامی برای ارسال پیام ناشناس، با پشتیبانی از Telegram Cloud سرورلس. جزئیات فنی به‌زودی تکمیل می‌شود.</p>
+          <div class="project-tags"><span class="ptag">Python</span><span class="ptag">Telegram Bot API</span><span class="ptag">Serverless</span></div>
+          <div class="game-actions">
+            <a href="https://t.me/nammeh_resan_bot" target="_blank" rel="noopener" class="game-play-btn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              رفتن به ربات
+            </a>
+            <a href="https://github.com/hadipashaw/anonymous-telegram-bot" target="_blank" rel="noopener" class="project-link">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              مشاهده روی گیت‌هاب
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -635,28 +690,28 @@ footer {
     <div class="timeline reveal">
       <div class="tl-item">
         <div class="tl-stage">مرحله ۱</div>
-        <h3>شروع از الکترونیک و مدار</h3>
-        <p>کنجکاوی درباره اینکه مدارها و قطعات چطور کار می‌کنند، نقطه شروع مسیرم بود.</p>
+        <h3>اولین جرقه — الکترونیک</h3>
+        <p>آشنایی با مدارها، لحیم‌کاری و اولین پروژه‌های ساده.</p>
       </div>
       <div class="tl-item">
         <div class="tl-stage">مرحله ۲</div>
         <h3>ورود به آردوینو و برنامه‌نویسی</h3>
-        <p>بعد از آشنایی با مدارها، سراغ آردوینو و برنامه‌نویسی رفتم و ساختن پروژه‌های کوچک را شروع کردم.</p>
+        <p>اولین برد آردوینو، یادگیری ++C، HTML و CSS.</p>
       </div>
       <div class="tl-item">
         <div class="tl-stage">مرحله ۳</div>
         <h3>دنیای صنعت — PLC</h3>
-        <p>به‌مرور PLC و منطق کنترل صنعتی به یکی از بخش‌های اصلی مسیر یادگیری و تجربه‌ام تبدیل شد.</p>
+        <p>ورود به اتوماسیون صنعتی، یادگیری Ladder، FBD و STL.</p>
       </div>
       <div class="tl-item">
         <div class="tl-stage">مرحله ۴</div>
         <h3>امنیت سایبری و لینوکس</h3>
-        <p>در کنار برق و برنامه‌نویسی، لینوکس و امنیت سایبری را هم به‌عنوان حوزه‌های در حال یادگیری دنبال می‌کنم.</p>
+        <p>کار با لینوکس و ابزارهای امنیت شبکه.</p>
       </div>
       <div class="tl-item">
         <div class="tl-stage">الان</div>
         <h3>مهندسی برق + دنبال کار صنعتی</h3>
-        <p>الان دانشجوی مهندسی برق هستم و سعی می‌کنم تجربه‌های PLC، برنامه‌نویسی و پروژه‌های شخصی را کنار درس جلو ببرم و برای فرصت‌های مرتبط با صنعت آماده‌تر شوم.</p>
+        <p>تحصیل در مهندسی برق، ترکیب تجربه‌های صنعت و نرم‌افزار، و جستجوی فرصت کار صنعتی.</p>
       </div>
     </div>
   </div>
@@ -742,6 +797,29 @@ document.querySelectorAll('.nav-links button').forEach(b => b.addEventListener('
   window.addEventListener('touchmove', e => {
     if (e.touches[0]) look(e.touches[0].clientX, e.touches[0].clientY);
   }, { passive: true });
+
+  // روی موبایل/تاچ موسی وجود نداره، پس چشم‌ها رو با یه حرکت خودکار و چشمک‌زدن زنده نگه می‌داریم
+  const isTouch = window.matchMedia('(hover: none)').matches;
+  const reduceMotionEyes = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isTouch && !reduceMotionEyes) {
+    function idleLook() {
+      const eye = pupilL.parentElement;
+      const rect = eye.getBoundingClientRect();
+      const ang = Math.random() * Math.PI * 2;
+      const dist = MAX * Math.random();
+      look(rect.left + rect.width/2 + Math.cos(ang)*dist*30, rect.top + rect.height/2 + Math.sin(ang)*dist*30);
+      setTimeout(idleLook, 1800 + Math.random()*1400);
+    }
+    idleLook();
+  }
+  if (!reduceMotionEyes) {
+    function blink() {
+      [pupilL, pupilR].forEach(p => p.parentElement.style.transform = 'scaleY(0.15)');
+      setTimeout(() => { [pupilL, pupilR].forEach(p => p.parentElement.style.transform = 'scaleY(1)'); }, 120);
+      setTimeout(blink, 2600 + Math.random()*3200);
+    }
+    setTimeout(blink, 2000);
+  }
 })();
 
 /* اسیلوسکوپ زنده — فرکانس و شکل موج با موقعیت/فاصله موس از مرکز عوض می‌شه */
